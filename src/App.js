@@ -1,10 +1,11 @@
+import Router from "./components/screens/router";
 
 
 
 function App() {
   return (
     <div className="App">
-        <h1>Crunchyroll Clone</h1>
+        <Router/>
     </div>
   );
 }
