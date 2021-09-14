@@ -1,14 +1,13 @@
 import styled from "styled-components";
-import {AiOutlineMenu} from "react-icons/ai"
 
 
 export const MediaNavContainer = styled.div`
     position: fixed;
     z-index: 2;
-    width: 40%;
+    width: 300px;
     height: calc(100% - 60px);
     background-color: #0d0d0d;
-    display: grid;
+    display: grid;  
     align-items: center;
     margin-top: 60px;
     left: 0;

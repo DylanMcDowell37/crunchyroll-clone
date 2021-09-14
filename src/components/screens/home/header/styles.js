@@ -3,6 +3,7 @@ import { GiLaurelCrown } from "react-icons/gi"
 import { FaRegBookmark } from "react-icons/fa"
 import { AiOutlineSearch } from "react-icons/ai"
 import { IoMdArrowDropdown } from "react-icons/io"
+import { CgProfile } from "react-icons/cg"
 
 
 export const HeaderContainer = styled.div`
@@ -12,8 +13,7 @@ export const HeaderContainer = styled.div`
     position: fixed;
     top: 0;
     right: 0;
-    left: 0;
-    z-index: 5; 
+    z-index: 999; 
     overflow: hidden;
     display: flex;
     flex-direction: row;
@@ -23,30 +23,6 @@ export const HeaderContainer = styled.div`
     
 `
 
-export const Nav = styled.nav`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    overflow: hidden;
-    
-    
-`
-export const NavLink = styled.a`
-    cursor: pointer;
-    color: #fff;
-    text-decoration: none;
-    padding: 5px;
-    :hover{
-        text-decoration: underline 3px #b0b0b0;
-        font-size: 18px;
-        color: white;
-        transition: .3s ease-in-out;
-    }
-    @media screen and (max-width: 768px){
-        display: none;
-    }
-
-`
 export const NavLogo = styled.a`
     display: flex;
     flex-direction: row;
@@ -59,10 +35,17 @@ export const NavLogo = styled.a`
         color: white;
     }
     color: #ff5c33;
-    font-family: 'Black Ops One', cursive;
+    font-family: Arial, Helvetica, sans-serif;
 
 `
+export const LogoContainer = styled.div`
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+`
+
 export const Text = styled.div`
+
     padding: 5px;
     font-size: 22px;
     display: flex;
@@ -73,37 +56,7 @@ export const Text = styled.div`
 
 
 `
-export const NavList = styled.div`
-    padding: 25px 25px 20px;
 
-      
-`
-export const NavIcons = styled.div`
-    display:flex;
-    flex-direction: row;
-    font-size: 15px;
-    align-items: center;
-    padding-left:200px;
-    justify-content: space-between;
-    
-    @media screen and (max-width: 768px){
-        display: none;
-    }
-
-`
-export const Icon = styled.a`
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    align-items: center;
-    color: white;
-    padding: 5px;
-    :hover{
-        font-size: 20px;
-        transition: .3s ease-in-out;
-    }
-    
-`
 export const MiniText = styled.p`
     font-size: 9px;
     padding: 1px;
@@ -118,7 +71,6 @@ export const MediaNav = styled.div `
             top: 0;
             left: 0;
             color: white;
-            z-index: 2;
             padding-left: 20px;
             padding: 20px;
             font-size: 25px;
@@ -130,14 +82,51 @@ export const MediaNav = styled.div `
 
     }
 
+`
+export const MediaMenuContainer = styled.div`
+    display: none;
+    @media screen and (max-width: 975px){
+        display: block;
+        overflow: hidden;
+        width: 60px;
+    }
 
 `
-export const Premium = styled.div`
+
+
+export const PremiumContainer = styled.div`
     color: white;
     display: flex;
     flex-direction: row;
     align-items: center;
+    height: 60px;
+    width: 90px;
+    :hover{
+        background-color: black;
+    }
     
+
+`
+export const SearchContainer = styled.div`
+    height: 60px;
+    width: 65px;
+    display: flex;
+    align-items: center;
+    :hover{
+        background-color: black;
+    }
+`
+export const WatchListContainer = styled.div`
+    height: 60px;
+    width: 65px;
+    display: flex;
+    align-items: center;
+    :hover{
+        background-color: black;
+    }
+    @media screen and (max-width: 575px){
+        display: none;
+    }
 
 `
 export const MiniTextContainer = styled.div`
@@ -145,44 +134,155 @@ export const MiniTextContainer = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 5px;
+    @media screen and (max-width: 575px){
+        display: none;
+    }
 `
 export const CrownIcon = styled(GiLaurelCrown)` 
     color: #ffb100;
     font-size: 25px;
+    padding-left: 9%;
+    @media screen and (max-width: 575px){
+        padding-left: 30%;
+        
+    }
 
 `
 
 export const Bookmark = styled(FaRegBookmark)`
     color: white;
     font-size: 20px;
-    padding: 20px;
+    padding-left: 30%;
+    
     
 `
 export const Search = styled(AiOutlineSearch)`
     color: white;
     font-size: 25px;
-    padding: 20px;
+    padding-left: 26%;
+    
     
 `
-export const Profile = styled.div`
+export const ProfileContainer = styled.div`
     color: white;
-    font-size: 25px;
+    font-size: 30px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 20px;
+    height: 60px;
+    width: 80px;
+    :hover{
+        background-color: black;
+    }
+    background-color: ${({ profileScreen })=> (profileScreen ? 'black': '#262626')};
+    
 
 `
 export const Arrow = styled(IoMdArrowDropdown)`
-    font-size: 15px;
+    font-size: 20px;
+    padding-top: 5px;
 `
-export const Right = styled.div`
+export const Profile = styled(CgProfile)`
+    padding-left: 15%;
+`
+export const RightContainer = styled.div`
     
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    overflow: hidden;
+    width: 300px;
+    @media screen and (max-width: 575px){
+        width: 45%;
+        
+    }
+    
+`
+export const LeftContainer = styled.div`
+        display: flex;
+        flex-direction: row;
+        align-items: left;
+        justify-content: space-around;
+        width: 220px;
+        margin-left: 0;
+    @media screen and (max-width: 975px){
+        width: 280px;
+        @media screen and (max-width: 575px){
+            width: 30%;
+        }
+    }
+
+`
+export const MiddleContainer = styled.div`
+    width: calc(100vw - 520px);
+    @media screen and (max-width: 975px){
+        width: calc(100vw - 580px);
+        @media screen and (max-width: 575px){
+            width: calc(100vw - 270px);
+        }
+    }
+`
+export const NavigationContainer = styled.div`
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @media screen and (max-width: 975px){
+        display: none;
+    }
+`
+export const BrowserContainer = styled.div`
+    height: 60px;
+    width: 90px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    font-size: 25px;
-    overflow: hidden;
-    
+    :hover{
+        background-color: black;
+    }
+    background-color: ${({ browse })=> (browse ? 'black': '#262626')};
+`
+export const MangaContainer = styled.div`
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 75px;
+    :hover{
+        background-color: black;
+    }
+`
+export const GamesContainer = styled.div`
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 75px;
+    :hover{
+        background-color: black;
+    }
+`
+export const NewsContainer = styled.div`
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 75px;
+    :hover{
+        background-color: black;
+    }
+`
+export const StoreContainer = styled.div`
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 75px;
+    :hover{
+        background-color: black;
+    }
 `

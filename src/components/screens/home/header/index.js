@@ -1,49 +1,92 @@
 import React  from 'react'
-import { MiniText, Search, Bookmark, Right, CrownIcon, Text, MediaNav,  NavList, NavLogo, NavLink, Nav, HeaderContainer, Profile, Arrow, Premium, MiniTextContainer} from './styles'
-import { CgProfile } from "react-icons/cg" 
-import {AiOutlineMenu, AiOutlineSearch} from "react-icons/ai"
+import { Profile, MiddleContainer, WatchListContainer, SearchContainer, StoreContainer, NewsContainer, GamesContainer, MangaContainer, BrowserContainer, NavigationContainer, LogoContainer, MediaMenuContainer, LeftContainer, MiniText, Search, Bookmark, RightContainer, CrownIcon, Text, MediaNav,  NavLogo, HeaderContainer, ProfileContainer, Arrow, PremiumContainer, MiniTextContainer} from './styles' 
+import {AiOutlineMenu} from "react-icons/ai"
 import { SiCrunchyroll } from "react-icons/si"
-import { IoMdArrowDropdown } from "react-icons/io"
 
 
 
 
 
-export default function HeaderHome({toggle, isOpen}) {
+
+export default function HeaderHome({toggle, isOpen, browse, toggleBrowse, profileScreen, toggleProfileScreen, premium, togglePremium}) {
     
 
 
     return (
         <>
         <HeaderContainer >
-            <Nav > 
-                <MediaNav isOpen = {isOpen} onClick = {toggle}>
-                    <AiOutlineMenu/>
-                </MediaNav>
-                <NavLogo href = "#/">
-                    <SiCrunchyroll/> 
-                    <Text>
-                        crunchyroll
-                        <MiniText>CLONE</MiniText>
-                    </Text>
-                </NavLogo>
-            </Nav>
-            <Right>
-                <Premium>
+
+            <LeftContainer>
+
+                <MediaMenuContainer>
+                    <MediaNav isOpen = {isOpen} onClick = {toggle}>
+                        <AiOutlineMenu/>
+                    </MediaNav>
+                </MediaMenuContainer> 
+
+                <LogoContainer>   
+                    <NavLogo href = "#/">
+                        <SiCrunchyroll/> 
+                        <Text>
+                            crunchyroll
+                            <MiniText>CLONE</MiniText>
+                        </Text>
+                    </NavLogo>
+                </LogoContainer>
+
+            </LeftContainer>
+
+            <MiddleContainer>
+                <NavigationContainer>
+
+                    <BrowserContainer browse = {browse} onClick = {toggleBrowse}>
+                        Browse
+                        <Arrow/>
+                    </BrowserContainer>
+
+                    <MangaContainer>
+                        Manga
+                    </MangaContainer>
+                        
+                    <GamesContainer>
+                        Games
+                    </GamesContainer>
+
+                    <NewsContainer>
+                        News
+                    </NewsContainer>
+
+                    <StoreContainer>
+                        Store
+                    </StoreContainer>
+
+                </NavigationContainer>
+            </MiddleContainer>
+
+            <RightContainer>
+
+                <PremiumContainer onMouseEnter = {togglePremium} onMouseLeave = {togglePremium}>
                     <CrownIcon/>
                     <MiniTextContainer>
                         <MiniText style = {{color: "#ffb100"}}>TRY FREE</MiniText>
                         <MiniText style = {{color: "white"}}>PREMIUM</MiniText>
-                    </MiniTextContainer>
-                    
-                </Premium>
-                   <Search/>
-                   <Bookmark />
-                   <Profile>
-                        <CgProfile/>
-                        <Arrow/>
-                   </Profile>
-            </Right>
+                    </MiniTextContainer>                    
+                </PremiumContainer>
+
+                <SearchContainer>
+                    <Search/>
+                </SearchContainer>
+
+                <WatchListContainer>
+                    <Bookmark />
+                </WatchListContainer>   
+                   
+                <ProfileContainer profileScreen = {profileScreen} onClick = {toggleProfileScreen}>
+                    <Profile/>
+                    <Arrow/>
+                </ProfileContainer>
+
+            </RightContainer>
              
         </HeaderContainer>
        
