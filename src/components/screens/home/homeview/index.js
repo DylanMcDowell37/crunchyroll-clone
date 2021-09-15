@@ -7,8 +7,8 @@ import { Container } from "./styled"
 export default function HomeView() {
     return (
         <Container>
-            <Top/>
-            <AnimeRow fetchUrl = {requestAnime.fetchPopular}/>
+            <Top fetchUrl = {requestAnime.fetchFeature}/>
+            <AnimeRow title = {'Most Popular'} fetchUrl = {requestAnime.fetchPopular}/>
         </Container>
     )
 }
