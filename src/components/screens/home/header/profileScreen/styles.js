@@ -14,7 +14,9 @@ export const ProfileScreenContainer = styled.div`
     transition: 0.1s ease-in-out;
     opacity: ${({ profileScreen })=> (profileScreen ? '100%': '0')};
     top: ${({ profileScreen })=> (profileScreen ? '0' : '-100%')};
-
+    @media screen and (max-width: 575px){
+        width: 100%;
+    }
 
 
 `

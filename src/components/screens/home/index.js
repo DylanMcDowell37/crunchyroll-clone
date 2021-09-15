@@ -4,6 +4,8 @@ import MediaLinks from './header/mediaScreen'
 import BrowseScreen from './header/browseScreen'
 import PremiumDrop from './header/premiumDrop'
 import ProfileScreen from './header/profileScreen'
+import HomeView from './homeview'
+import { Container } from './styled'
 
 export default function Home() {
     const [isOpen, setIsOpen] = useState(false)
@@ -26,7 +28,7 @@ export default function Home() {
         setIsOpen(false)
     }
     return (
-        <div>
+        <Container>
             <MediaLinks 
                 isOpen = {isOpen} 
                 toggle = {toggle}
@@ -54,7 +56,7 @@ export default function Home() {
                 togglePremium = {togglePremium}
                 toggleProfileScreen = {toggleProfileScreen}
                 />
-            
-        </div> 
+            <HomeView/>
+        </Container> 
     )
 }

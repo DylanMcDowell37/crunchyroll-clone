@@ -1,13 +1,16 @@
 import Router from "./components/screens/router";
-
+import styled from "styled-components"
 
 
 function App() {
   return (
-    <div className="App">
+    <Container>
         <Router/>
-    </div>
+    </Container>
   );
 }
+export const Container = styled.div`
 
+
+`
 export default App;

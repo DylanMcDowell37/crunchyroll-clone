@@ -14,10 +14,10 @@ export const PremiumDropContainer = styled.div`
     align-items: center;
     margin-top: 52px;
     right: 50px;
-    transition: 0.1s ease-in-out;
+    transition: 0.2s ease-in-out;
     opacity: ${({ premium })=> (premium ? '100%': '0')};
     top: ${({ premium })=> (premium ? '0' : '-100%')};
- 
+
 
 
 `
