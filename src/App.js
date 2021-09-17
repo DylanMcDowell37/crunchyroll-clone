@@ -10,7 +10,12 @@ function App() {
   );
 }
 export const Container = styled.div`
-
+    overflow-x: hidden;
+    overflow-y: scroll;
+    ::-webkit-scrollbar{
+      display: none;
+    }
+  
 
 `
 export default App;
