@@ -1,31 +1,41 @@
 import styled from "styled-components"
-
+import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
 
 export const TopContainer = styled.div`
     width: 100vw;
     height: calc(100vh - 60px);
-    background-color: lightblue;
+    transition: ease-in-out 0.5s;
+    background-color: ${({ background })=> (background ? '#ffb100' : 'lightblue')};;
     position: relative;
     margin-top: 60px;
     right: 0; 
     display: flex;
     flex-direction: row;
-    overflow-y: hidden;
     align-items: center;
-    overflow-x: scroll;
+    overflow-y: hidden;
+
+    
+`
+export const Container = styled.div`
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    align-items: center;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     ::-webkit-scrollbar{
         display: none;
+        
     }
     @media screen and (max-width: 975px){
         height: auto;
 
 
     }
-    
 `
 
-
-export const PosterContainer = styled.div` 
+export const PosterContainer = styled.div`
     display: block;
     position: relative;
     padding-top: 40px;
@@ -33,6 +43,7 @@ export const PosterContainer = styled.div`
     justify-content: space-evenly;
     padding-left: 12.5vw;
     padding-right: 12.5vw;
+    scroll-snap-align: start;
     
     @media screen and (max-width: 975px){
         padding-left: 25vw;
@@ -70,4 +81,45 @@ export const MobilePoster = styled.img`
 
 
         }
+`
+
+export const LeftArrow = styled(IoIosArrowBack)`
+    font-size: 30px;
+    color: white;
+    :hover{
+        font-size: 35px;
+    }
+
+`
+export const RightArrow = styled(IoIosArrowForward)`
+    font-size: 30px;
+    margin-left: 10px;
+    color: white;
+    :hover{
+        font-size: 35px;
+    }
+    
+`
+export const LeftContainer = styled.div`
+    position: absolute;
+    height: calc(100vh - 60px);
+    width: 3vw;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    background-color: rgb(128,128,128,0.05);
+    display: ${({ arrowLeft })=> (arrowLeft ? 'flex' : 'none')};
+    
+
+`
+export const RightContainer = styled.div`
+    position: absolute;
+    height: calc(100vh - 60px);
+    width: 3vw;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    right: 20px;
+    background-color: rgb(128,128,128,0.05);
+    display: ${({ arrowRight })=> (arrowRight ? 'flex' : 'none')};
 `

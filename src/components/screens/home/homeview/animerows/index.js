@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Container, TitleHeader, Title, Row, Poster, AnimeRowContainer } from './styled'
+import { Line, Container, TitleHeader, Title, Row, Poster, AnimeRowContainer } from './styled'
 import axios from 'axios'
 
 export default function AnimeRow({fetchUrl, title}) {
@@ -20,6 +20,7 @@ export default function AnimeRow({fetchUrl, title}) {
     return (
         <Container>
             <TitleHeader>{title}</TitleHeader>
+            <Line/>
             <AnimeRowContainer>
                 
                 {animeList.map((anime)=>(
