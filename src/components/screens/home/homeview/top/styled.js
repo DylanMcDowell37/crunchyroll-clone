@@ -4,7 +4,6 @@ import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
 export const TopContainer = styled.div`
     width: 100vw;
     height: calc(100vh - 60px);
-    transition: ease-in-out 0.5s;
     background-color: ${({ background })=> (background ? '#ffb100' : 'lightblue')};;
     position: relative;
     margin-top: 60px;
@@ -85,6 +84,7 @@ export const MobilePoster = styled.img`
 
 export const LeftArrow = styled(IoIosArrowBack)`
     font-size: 30px;
+    position: absolute;
     color: white;
     :hover{
         font-size: 35px;
@@ -93,8 +93,10 @@ export const LeftArrow = styled(IoIosArrowBack)`
 `
 export const RightArrow = styled(IoIosArrowForward)`
     font-size: 30px;
-    margin-left: 10px;
-    color: white;
+    position: absolute;
+    margin-left: -20px;
+    color: white; 
+    
     :hover{
         font-size: 35px;
     }
@@ -102,12 +104,10 @@ export const RightArrow = styled(IoIosArrowForward)`
 `
 export const LeftContainer = styled.div`
     position: absolute;
-    height: calc(100vh - 60px);
-    width: 3vw;
-    z-index: 5;
+    height: calc(100vh - 60px); 
     display: flex;
     align-items: center;
-    background-color: rgb(128,128,128,0.05);
+    z-index: 5;
     display: ${({ arrowLeft })=> (arrowLeft ? 'flex' : 'none')};
     
 
@@ -118,8 +118,7 @@ export const RightContainer = styled.div`
     width: 3vw;
     z-index: 5;
     display: flex;
+    right: 0;
     align-items: center;
-    right: 20px;
-    background-color: rgb(128,128,128,0.05);
     display: ${({ arrowRight })=> (arrowRight ? 'flex' : 'none')};
 `

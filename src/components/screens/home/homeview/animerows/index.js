@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Line, Container, TitleHeader, Title, Row, Poster, AnimeRowContainer } from './styled'
+import { Type, Subbed, Text, RowContainer, Line, Container, TitleHeader, Title, Row, Poster, AnimeRowContainer, Diamond } from './styled'
 import axios from 'axios'
+
 
 export default function AnimeRow({fetchUrl, title}) {
     //https://simkl.in/posters/72/7248108487b1ea37_ca.webp
@@ -19,19 +20,20 @@ export default function AnimeRow({fetchUrl, title}) {
     console.log(animeList)
     return (
         <Container>
-            <TitleHeader>{title}</TitleHeader>
-            <Line/>
+   
             <AnimeRowContainer>
-                
-                {animeList.map((anime)=>(
-                    <Row>
+                <TitleHeader>{title}</TitleHeader>
+                <Line/>
+                <RowContainer>
+                    {animeList.map((anime)=>(
+                        <Row>                            
+                            <Poster key = {anime.id} src = {`https://simkl.in/posters/${anime.poster}_ca.webp`} alt = {anime.title}/> 
+                            <Title>{anime.title}</Title>
+                            <Text><Type>Series</Type><Subbed><Diamond/>Subtitled</Subbed></Text>
+                        </Row>
                             
-                        <Poster key = {anime.id} src = {`https://simkl.in/posters/${anime.poster}_ca.webp`} alt = {anime.title}/> 
-                        <Title>{anime.title}</Title>
-                    </Row>
-                        
-                ))}
-                
+                    ))}
+                </RowContainer>
             </AnimeRowContainer>
         </Container>
     )
