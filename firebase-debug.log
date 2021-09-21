@@ -1,0 +1,105 @@
+[debug] [2021-09-21T09:09:37.361Z] ----------------------------------------------------------------------
+[debug] [2021-09-21T09:09:37.365Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\mcdow\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-09-21T09:09:37.366Z] CLI Version:   9.18.0
+[debug] [2021-09-21T09:09:37.366Z] Platform:      win32
+[debug] [2021-09-21T09:09:37.367Z] Node Version:  v16.8.0
+[debug] [2021-09-21T09:09:37.373Z] Time:          Tue Sep 21 2021 02:09:37 GMT-0700 (Pacific Daylight Time)
+[debug] [2021-09-21T09:09:37.374Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-09-21T09:09:37.378Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2021-09-21T09:09:37.497Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-09-21T09:09:37.497Z] > authorizing via signed-in user (mcdowelldylan52@gmail.com)
+[debug] [2021-09-21T09:09:37.497Z] [iam] checking project crunchyroll-clone-59abd for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-09-21T09:09:37.499Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-09-21T09:09:37.500Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-09-21T09:09:37.723Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Tue, 21 Sep 2021 09:09:37 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-09-21T09:09:37.750Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/crunchyroll-clone-59abd:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-09-21T09:09:37.791Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2021-09-21T09:09:37.792Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2021-09-21T09:09:38.180Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 21 Sep 2021 09:09:38 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=194","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-09-21T09:09:38.182Z] > refreshing access token with scopes: []
+[debug] [2021-09-21T09:09:38.182Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-09-21T09:09:38.317Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Tue, 21 Sep 2021 09:09:38 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-09-21T09:09:38.331Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/crunchyroll-clone-59abd [none]
+[debug] [2021-09-21T09:09:38.773Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/crunchyroll-clone-59abd 200
+[debug] [2021-09-21T09:09:38.774Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/crunchyroll-clone-59abd {"projectId":"crunchyroll-clone-59abd","projectNumber":"963417856486","displayName":"crunchyroll-clone","name":"projects/crunchyroll-clone-59abd","resources":{"hostingSite":"crunchyroll-clone-59abd"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'crunchyroll-clone-59abd'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2021-09-21T09:09:38.781Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-09-21T09:09:38.782Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-09-21T09:09:38.905Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Tue, 21 Sep 2021 09:09:38 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-09-21T09:09:38.920Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/crunchyroll-clone-59abd/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2021-09-21T09:09:39.741Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 21 Sep 2021 09:09:39 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[crunchyroll-clone-59abd]: beginning deploy... 
+[info] i  hosting[crunchyroll-clone-59abd]: found 11 files in build 
+[debug] [2021-09-21T09:09:42.545Z] > refreshing access token with scopes: []
+[debug] [2021-09-21T09:09:42.545Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-09-21T09:09:42.547Z] [hosting] hash cache [YnVpbGQ] stored for 11 files
+[debug] [2021-09-21T09:09:42.548Z] [hosting][hash queue][FINAL] {"max":2776,"min":23,"avg":278.8181818181818,"active":0,"complete":11,"success":11,"errored":0,"retried":0,"total":11,"elapsed":2784}
+[debug] [2021-09-21T09:09:42.671Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Tue, 21 Sep 2021 09:09:42 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-09-21T09:09:42.691Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578:populateFiles [none]
+[debug] [2021-09-21T09:09:42.692Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578:populateFiles {"files":{"/index.html":"c9c6cff030f3e5391d10f85e69dc6863f994a3497a00eebd73b141b09800c555","/static/js/2.91b3d404.chunk.js.LICENSE.txt":"4175e3530ff4749df737c0300881a682fa3627d8cd8e58011579cf28093044b1","/static/js/3.a86fedce.chunk.js":"ffa2c50aaff5c11990c6848590352b8f58817c60745b961a7a770ae197d3cbfb","/static/js/3.a86fedce.chunk.js.map":"4d0b2d47e826d7eb7dc02cc2371838cc623ecdcafc9ed7b4370f4a43eb04b72f","/static/js/runtime-main.481b9891.js":"00d211edaacc388b9ae3af8c8025b49b34c6c4efa8077a84f308a92fb4dc518f","/asset-manifest.json":"6a835c20f0cc244b4a11692b4156d1429390947f93570aec82c27fc6a599af8f","/static/js/main.f0d8f34e.chunk.js":"90b119bde9054c472cc4cf76b69d77d6e1f25e861389f69734597e1a4f8c3236","/static/js/runtime-main.481b9891.js.map":"da53a2f3c24c278007521fed99ad04e4ff87f92ca5d02f79366c512f309c072c","/static/js/main.f0d8f34e.chunk.js.map":"f9a2ce32cd0865791e0b1f88a0d0df34be7c330f4d244e38c237285175f1162a","/static/js/2.91b3d404.chunk.js":"1b3ccf645cac004381b538a8c78e6d1126203885c8006e8d164cf50c6594eb77","/static/js/2.91b3d404.chunk.js.map":"e4dbfb9ab60015bcda78687a24e158bfc829d4d28f44bbed6eb9dfe2c7e2c08f"}}
+[debug] [2021-09-21T09:09:43.531Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578:populateFiles 200
+[debug] [2021-09-21T09:09:43.532Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578:populateFiles {"uploadRequiredHashes":["c9c6cff030f3e5391d10f85e69dc6863f994a3497a00eebd73b141b09800c555","6a835c20f0cc244b4a11692b4156d1429390947f93570aec82c27fc6a599af8f","90b119bde9054c472cc4cf76b69d77d6e1f25e861389f69734597e1a4f8c3236","e4dbfb9ab60015bcda78687a24e158bfc829d4d28f44bbed6eb9dfe2c7e2c08f","1b3ccf645cac004381b538a8c78e6d1126203885c8006e8d164cf50c6594eb77","f9a2ce32cd0865791e0b1f88a0d0df34be7c330f4d244e38c237285175f1162a"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files"}
+[debug] [2021-09-21T09:09:43.540Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/c9c6cff030f3e5391d10f85e69dc6863f994a3497a00eebd73b141b09800c555 [none]
+[debug] [2021-09-21T09:09:43.540Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/c9c6cff030f3e5391d10f85e69dc6863f994a3497a00eebd73b141b09800c555 [stream]
+[debug] [2021-09-21T09:09:43.545Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/6a835c20f0cc244b4a11692b4156d1429390947f93570aec82c27fc6a599af8f [none]
+[debug] [2021-09-21T09:09:43.545Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/6a835c20f0cc244b4a11692b4156d1429390947f93570aec82c27fc6a599af8f [stream]
+[debug] [2021-09-21T09:09:43.549Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/90b119bde9054c472cc4cf76b69d77d6e1f25e861389f69734597e1a4f8c3236 [none]
+[debug] [2021-09-21T09:09:43.549Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/90b119bde9054c472cc4cf76b69d77d6e1f25e861389f69734597e1a4f8c3236 [stream]
+[debug] [2021-09-21T09:09:43.553Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/e4dbfb9ab60015bcda78687a24e158bfc829d4d28f44bbed6eb9dfe2c7e2c08f [none]
+[debug] [2021-09-21T09:09:43.553Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/e4dbfb9ab60015bcda78687a24e158bfc829d4d28f44bbed6eb9dfe2c7e2c08f [stream]
+[debug] [2021-09-21T09:09:43.557Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/1b3ccf645cac004381b538a8c78e6d1126203885c8006e8d164cf50c6594eb77 [none]
+[debug] [2021-09-21T09:09:43.557Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/1b3ccf645cac004381b538a8c78e6d1126203885c8006e8d164cf50c6594eb77 [stream]
+[debug] [2021-09-21T09:09:43.561Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/f9a2ce32cd0865791e0b1f88a0d0df34be7c330f4d244e38c237285175f1162a [none]
+[debug] [2021-09-21T09:09:43.561Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/f9a2ce32cd0865791e0b1f88a0d0df34be7c330f4d244e38c237285175f1162a [stream]
+[debug] [2021-09-21T09:09:43.565Z] [hosting][populate queue][FINAL] {"max":996,"min":996,"avg":996,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1021}
+[debug] [2021-09-21T09:09:43.566Z] [hosting] uploads queued: 6
+[debug] [2021-09-21T09:09:44.391Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/c9c6cff030f3e5391d10f85e69dc6863f994a3497a00eebd73b141b09800c555 200
+[debug] [2021-09-21T09:09:44.391Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/c9c6cff030f3e5391d10f85e69dc6863f994a3497a00eebd73b141b09800c555 [stream]
+[debug] [2021-09-21T09:09:44.459Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/6a835c20f0cc244b4a11692b4156d1429390947f93570aec82c27fc6a599af8f 200
+[debug] [2021-09-21T09:09:44.459Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/6a835c20f0cc244b4a11692b4156d1429390947f93570aec82c27fc6a599af8f [stream]
+[debug] [2021-09-21T09:09:44.467Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/90b119bde9054c472cc4cf76b69d77d6e1f25e861389f69734597e1a4f8c3236 200
+[debug] [2021-09-21T09:09:44.468Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/90b119bde9054c472cc4cf76b69d77d6e1f25e861389f69734597e1a4f8c3236 [stream]
+[debug] [2021-09-21T09:09:44.495Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/f9a2ce32cd0865791e0b1f88a0d0df34be7c330f4d244e38c237285175f1162a 200
+[debug] [2021-09-21T09:09:44.496Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/f9a2ce32cd0865791e0b1f88a0d0df34be7c330f4d244e38c237285175f1162a [stream]
+[debug] [2021-09-21T09:09:44.602Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/1b3ccf645cac004381b538a8c78e6d1126203885c8006e8d164cf50c6594eb77 200
+[debug] [2021-09-21T09:09:44.603Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/1b3ccf645cac004381b538a8c78e6d1126203885c8006e8d164cf50c6594eb77 [stream]
+[debug] [2021-09-21T09:09:48.133Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/e4dbfb9ab60015bcda78687a24e158bfc829d4d28f44bbed6eb9dfe2c7e2c08f 200
+[debug] [2021-09-21T09:09:48.133Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578/files/e4dbfb9ab60015bcda78687a24e158bfc829d4d28f44bbed6eb9dfe2c7e2c08f [stream]
+[debug] [2021-09-21T09:09:48.133Z] [hosting][upload queue][FINAL] {"max":4596,"min":860,"avg":1555.6666666666667,"active":0,"complete":6,"success":6,"errored":0,"retried":0,"total":6,"elapsed":4601}
+[info] +  hosting[crunchyroll-clone-59abd]: file upload complete 
+[debug] [2021-09-21T09:09:48.135Z] [hosting] deploy completed after 8391ms
+[debug] [2021-09-21T09:09:48.137Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "crunchyroll-clone-59abd"
+    },
+    "site": "crunchyroll-clone-59abd",
+    "version": "sites/crunchyroll-clone-59abd/versions/1e99b6766fbc8578"
+  }
+]
+[info] i  hosting[crunchyroll-clone-59abd]: finalizing version... 
+[debug] [2021-09-21T09:09:48.138Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-09-21T09:09:48.139Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>

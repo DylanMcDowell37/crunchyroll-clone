@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef} from 'react'
-import { LeftArrow, RightArrow, LeftContainer, RightContainer, Container, MobilePoster, WebPoster, PosterContainer, TopContainer } from './styled'
+import { LeftArrow, RightArrow, LeftContainer, RightContainer, Container, MobilePoster, WebPoster, PosterContainer, TopContainer} from './styled'
 import axios from 'axios'
 
 
@@ -59,6 +59,9 @@ export default function Top({fetchUrl}) {
         
 
     }
+    const changeScreen = () => {
+        return ref.current.scrollLeft
+    }
     const autoScroll = () => {
         if(ref.current.scrollLeft < (ref.current.scrollWidth - window.innerWidth)){
             scroll(window.innerWidth)
@@ -74,12 +77,13 @@ export default function Top({fetchUrl}) {
 
     }
     useEffect(() => {
+        // let change = changeScreen()
         var timer = setInterval(()=> autoScroll(), 10000)
         return function cleanup() {
             clearInterval(timer)
         }
-    
-    });
+        
+    }, [changeScreen]);
     console.log(arrowLeft)
     console.log(arrowRight)
     console.log(background)
@@ -87,8 +91,8 @@ export default function Top({fetchUrl}) {
         <>
 
         <TopContainer background = {background} >
-            <LeftContainer onClick = {() => scrollR()} arrowLeft = {arrowLeft}>
-                <LeftArrow />
+            <LeftContainer  arrowLeft = {arrowLeft}>
+                <LeftArrow onClick = {() => scrollR()}/>
             </LeftContainer>            
                 <Container ref = {ref} >
                         {topList.map((top, index) =>(
@@ -101,8 +105,10 @@ export default function Top({fetchUrl}) {
                 </Container> 
             <RightContainer arrowRight = {arrowRight}>
                 <RightArrow onClick = {() => scrollL()} />
-            </RightContainer>   
-        </TopContainer >
+            </RightContainer>
+
+        </TopContainer >            
+
         </>
     )
 }

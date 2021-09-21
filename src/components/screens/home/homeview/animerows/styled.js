@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import {BsDiamondFill, BsFillDiamondFill} from 'react-icons/bs'
+import {BsDiamondFill} from 'react-icons/bs'
+import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
 
 export const AnimeRowContainer = styled.div`
     display: flex;
@@ -110,4 +111,46 @@ export const Subbed = styled.p`
 export const Diamond = styled(BsDiamondFill)`
     font-size: 5px;
     padding: 2px;
+`
+
+export const LeftArrow = styled(IoIosArrowBack)`
+    font-size: 30px;
+    position: absolute;
+    color: white;
+    :hover{
+        font-size: 35px;
+    }
+`
+export const RightArrow = styled(IoIosArrowForward)`
+    font-size: 30px;
+    position: absolute;
+    margin-left: -10px;
+    color: white; 
+    
+    :hover{
+        font-size: 35px;
+    }
+    
+`
+export const LeftContainer = styled.div`
+    position: absolute;
+    height: calc(100vh - 60px);
+    left: 0;
+    display: flex;
+    align-items: center;
+    z-index: 5;
+    transition: ease-in-out 0.1s;
+    display: ${({ arrowLeft })=> (arrowLeft ? 'flex' : 'none')};
+    
+`
+export const RightContainer = styled.div`
+    position: absolute;
+    height: calc(100vh - 60px);
+    width: 3vw;
+    z-index: 5;
+    display: flex;
+    right: 0;
+    align-items: center;
+    transition: ease-in-out 0.7s;
+    display: ${({ arrowRight })=> (arrowRight ? 'flex' : 'none')};
 `

@@ -12,7 +12,6 @@ export const TopContainer = styled.div`
     flex-direction: row;
     align-items: center;
     overflow-y: hidden;
-
     
 `
 export const Container = styled.div`
@@ -29,8 +28,6 @@ export const Container = styled.div`
     }
     @media screen and (max-width: 975px){
         height: auto;
-
-
     }
 `
 
@@ -53,8 +50,6 @@ export const PosterContainer = styled.div`
                 padding-right: 10vw;
                 
             }
-
-
         }
     
     
@@ -67,7 +62,6 @@ export const WebPoster = styled.img`
     @media screen and (max-width: 975px){
         display: none;
     }
-
 `
 export const MobilePoster = styled.img`
     display: none;
@@ -77,8 +71,6 @@ export const MobilePoster = styled.img`
             @media screen and (max-width: 575px){
                 width: 80vw;
             }
-
-
         }
 `
 
@@ -89,7 +81,6 @@ export const LeftArrow = styled(IoIosArrowBack)`
     :hover{
         font-size: 35px;
     }
-
 `
 export const RightArrow = styled(IoIosArrowForward)`
     font-size: 30px;
@@ -110,7 +101,6 @@ export const LeftContainer = styled.div`
     z-index: 5;
     display: ${({ arrowLeft })=> (arrowLeft ? 'flex' : 'none')};
     
-
 `
 export const RightContainer = styled.div`
     position: absolute;
