@@ -10,7 +10,7 @@ export default function AnimeRow({fetchUrl, title}) {
     let animeRef = useRef([])
     const [arrowLeft, setArrowLeft] = useState(false)
     const [arrowRight, setArrowRight] = useState(true)
-    const [background, setBackground] = useState(true)
+    const [mediaArrow, setMediaArrow] = useState(false)
 
     useEffect(() => {
         async function fetchData(){
@@ -24,39 +24,13 @@ export default function AnimeRow({fetchUrl, title}) {
     }, [fetchUrl])
     console.log(animeList)
     const scroll = (scrollPos) => {
-
-        ref.current.scrollLeft += scrollPos
-         
+        ref.current.scrollLeft += scrollPos         
     };
     const scrollL = () =>{
-        if(ref.current.scrollLeft < (ref.current.scrollWidth - window.innerWidth )){
            scroll(animeRef.current.scrollWidth)
-           setArrowLeft(true)
-           setArrowRight(true) 
-           setBackground(!background)
-        }
-        else{
-            scroll(animeRef.current.scrollWidth)
-            setArrowRight(false)
-            setBackground(!background)
-        }
-        
-
     }
     const scrollR = () =>{
-        if(ref.current.scrollLeft > window.innerWidth) {
             scroll(-animeRef.current.scrollWidth)
-            setArrowLeft(true)
-            setArrowRight(true)
-            setBackground(!background)
-        }
-        else{
-            scroll(-animeRef.current.scrollWidth)
-            setArrowLeft(false)
-            setBackground(!background)
-        }
-        
-
     }
     const changeArrow = () => {
         if(ref.current.scrollLeft >= 10){
@@ -72,20 +46,31 @@ export default function AnimeRow({fetchUrl, title}) {
             setArrowRight(false)
         }
     }
-
-
+    const mouseOverArrowMedia = () =>{
+        setMediaArrow(true)
+    }
+    const mouseOutArrowMedia = () =>{
+        setMediaArrow(false)
+    }
     useEffect(() => {
         ref.current.addEventListener('scroll', changeArrow)
     }, [])
+    useEffect(() =>{
+        ref.current.addEventListener('mouseover', mouseOverArrowMedia)
+    })
+    useEffect(() =>{
+        ref.current.addEventListener('mouseout', mouseOutArrowMedia)
+    })
     return (
         <Container>
-            <LeftContainer  arrowLeft = {arrowLeft}>
-                <LeftArrow onClick = {() => scrollR()}/>
-            </LeftContainer>
+
             <AnimeRowContainer >
                 <TitleHeader>{title}</TitleHeader>
                 <Line/>
                 <RowContainer ref = {ref} >
+                    <LeftContainer  arrowLeft = {arrowLeft} >
+                        <LeftArrow onClick = {() => scrollR()} mediaArrow = {mediaArrow}/>
+                    </LeftContainer>
                     {animeList.map((anime)=>(
                         <Row ref = {animeRef}>                            
                             <Poster key = {anime.id} src = {`https://simkl.in/posters/${anime.poster}_ca.webp`} alt = {anime.title}/> 
@@ -94,11 +79,12 @@ export default function AnimeRow({fetchUrl, title}) {
                         </Row>
                             
                     ))}
+                    <RightContainer arrowRight = {arrowRight} >
+                        <RightArrow onClick = {() => scrollL()} mediaArrow = {mediaArrow} />
+                    </RightContainer>
                 </RowContainer>
             </AnimeRowContainer>
-            <RightContainer arrowRight = {arrowRight}>
-                <RightArrow onClick = {() => scrollL()} />
-            </RightContainer>
+
         </Container>
     )
 }

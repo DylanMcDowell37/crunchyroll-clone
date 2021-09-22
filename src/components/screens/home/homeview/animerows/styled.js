@@ -12,12 +12,14 @@ export const AnimeRowContainer = styled.div`
        width: 88vw;
     }
 
+
 `
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
     background-color: black;
     align-items: center;
+    
    
     
 `
@@ -30,8 +32,8 @@ export const Poster = styled.img`
        width: 20vw;
        max-width: 220px;   
         @media screen and (max-width: 575px){
-            width: 42vw;
-            max-width: 250px;
+            width: 43vw;
+            max-width: 275px;
         }
     }
 
@@ -43,6 +45,7 @@ export const Title = styled.p`
     font-size: 15px;
     padding-top: 15px;
     padding-bottom: 15px;
+
 `
 export const Row = styled.div`
 
@@ -64,8 +67,8 @@ export const Row = styled.div`
         max-width: 230px;
         margin-right: 1.1vw;
         @media screen and (max-width: 575px){
-             width: 42vw;
-             max-width: 250px;
+             width: 43vw;
+             max-width: 275px;
              margin-right: 0.3vw;
         } 
     }
@@ -76,12 +79,13 @@ export const TitleHeader = styled.div`
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 15px;
+
 `
 export const Line = styled.div`
     height: 3px;
     width: 100%;
     background-color: #ffb100;
-    
+
 `
 export const RowContainer = styled.div`
     display: flex;
@@ -120,37 +124,70 @@ export const LeftArrow = styled(IoIosArrowBack)`
     :hover{
         font-size: 35px;
     }
+    @media screen and (max-width: 575px){
+            display: ${({ mediaArrow })=> (mediaArrow ? 'flex' : 'none')}; 
+            font-size: 18px;
+            background-color: rgb(102,102,102, 0.7);
+            padding: 5px;
+            :hover{
+                font-size: 20px;
+            }
+        } 
 `
 export const RightArrow = styled(IoIosArrowForward)`
     font-size: 30px;
     position: absolute;
     margin-left: -10px;
-    color: white; 
-    
+    color: white;
+    right: 0;
     :hover{
         font-size: 35px;
     }
+    @media screen and (max-width: 575px){
+            display: ${({ mediaArrow })=> (mediaArrow ? 'flex' : 'none')};
+            font-size: 18px;
+            background-color: rgb(102,102,102, 0.7);
+            padding: 5px;
+            :hover{
+                font-size: 20px;
+            }
+        } 
     
 `
 export const LeftContainer = styled.div`
     position: absolute;
-    height: calc(100vh - 60px);
-    left: 0;
+    height: 50%;
+    max-height: 300px;
+    margin-left: -4vw;
     display: flex;
     align-items: center;
-    z-index: 5;
+    z-index: 1;
     transition: ease-in-out 0.1s;
     display: ${({ arrowLeft })=> (arrowLeft ? 'flex' : 'none')};
-    
+    @media screen and (max-width: 575px){
+            height: 70%;
+            margin-left: -4vw;
+    } 
+    @media screen and (min-width: 1225px){
+        left: auto;
+        margin-left: -50px;
+    }
 `
 export const RightContainer = styled.div`
     position: absolute;
-    height: calc(100vh - 60px);
-    width: 3vw;
-    z-index: 5;
+    height: 50%;
+    max-height: 300px;
+    left: 97vw;
+    z-index: 1;
     display: flex;
-    right: 0;
     align-items: center;
-    transition: ease-in-out 0.7s;
     display: ${({ arrowRight })=> (arrowRight ? 'flex' : 'none')};
+    @media screen and (max-width: 575px){
+            height: 70%;
+            right: 1vw;
+    } 
+    @media screen and (min-width: 1225px){
+        left: auto;
+        margin-left: 1110px;
+    }
 `

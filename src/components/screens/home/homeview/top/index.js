@@ -47,13 +47,10 @@ export default function Top({fetchUrl}) {
     const scrollR = () =>{
         if(ref.current.scrollLeft > window.innerWidth) {
             scroll(-window.innerWidth)
-            setArrowLeft(true)
-            setArrowRight(true)
             setBackground(!background)
         }
         else{
             scroll(-window.innerWidth)
-            setArrowLeft(false)
             setBackground(!background)
         }
         
@@ -65,16 +62,28 @@ export default function Top({fetchUrl}) {
     const autoScroll = () => {
         if(ref.current.scrollLeft < (ref.current.scrollWidth - window.innerWidth)){
             scroll(window.innerWidth)
-            setArrowLeft(true)
-            setArrowRight(true) 
             setBackground(!background)
         }
         else{
             scroll(-ref.current.scollWidth)
-            setArrowLeft(false)
-            setBackground(!background)
+            
         }
 
+    }
+    const changeArrow = () => {
+        if(ref.current.scrollLeft > 0){
+            setArrowLeft(true)
+        }
+        else{
+            setArrowLeft(false)
+            setBackground(true)
+        }
+        if(ref.current.scrollLeft < (ref.current.scrollWidth - (window.innerWidth + 100 ))) {
+            setArrowRight(true)
+        }
+        else{
+            setArrowRight(false)
+        }
     }
     useEffect(() => {
         // let change = changeScreen()
@@ -84,6 +93,9 @@ export default function Top({fetchUrl}) {
         }
         
     }, [changeScreen]);
+    useEffect(() => {
+        ref.current.addEventListener('scroll', changeArrow)
+    }, [])
     console.log(arrowLeft)
     console.log(arrowRight)
     console.log(background)
@@ -91,10 +103,11 @@ export default function Top({fetchUrl}) {
         <>
 
         <TopContainer background = {background} >
-            <LeftContainer  arrowLeft = {arrowLeft}>
-                <LeftArrow onClick = {() => scrollR()}/>
-            </LeftContainer>            
+            
                 <Container ref = {ref} >
+                    <LeftContainer  arrowLeft = {arrowLeft}>
+                        <LeftArrow onClick = {() => scrollR()}/>
+                    </LeftContainer>
                         {topList.map((top, index) =>(
                         <PosterContainer  key = {index} >
                             <MobilePoster src = {`https://simkl.in/posters/${top.poster}_ca.webp`} /> 
@@ -102,10 +115,11 @@ export default function Top({fetchUrl}) {
                         </PosterContainer>
                         
                         ))}
+                    <RightContainer arrowRight = {arrowRight}>
+                        <RightArrow onClick = {() => scrollL()} />
+                    </RightContainer>                       
                 </Container> 
-            <RightContainer arrowRight = {arrowRight}>
-                <RightArrow onClick = {() => scrollL()} />
-            </RightContainer>
+
 
         </TopContainer >            
 

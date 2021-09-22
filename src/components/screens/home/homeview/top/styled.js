@@ -3,7 +3,6 @@ import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
 
 export const TopContainer = styled.div`
     width: 100vw;
-    height: calc(100vh - 60px);
     background-color: ${({ background })=> (background ? '#ffb100' : 'lightblue')};;
     position: relative;
     margin-top: 60px;
@@ -95,7 +94,7 @@ export const RightArrow = styled(IoIosArrowForward)`
 `
 export const LeftContainer = styled.div`
     position: absolute;
-    height: calc(100vh - 60px); 
+    height: 50%; 
     display: flex;
     align-items: center;
     z-index: 5;
@@ -104,7 +103,7 @@ export const LeftContainer = styled.div`
 `
 export const RightContainer = styled.div`
     position: absolute;
-    height: calc(100vh - 60px);
+    height: 50%;
     width: 3vw;
     z-index: 5;
     display: flex;
