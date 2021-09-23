@@ -3,7 +3,7 @@ import { RightArrow, RightContainer, LeftArrow, LeftContainer, Type, Subbed, Tex
 import axios from 'axios'
 
 
-export default function AnimeRow({fetchUrl, title}) {
+export default function AnimeRow({fetchUrl, title, color1, color2}) {
     //https://simkl.in/posters/72/7248108487b1ea37_ca.webp
     const [animeList, setAnimeList] = useState([])
     let ref = useRef();
@@ -66,7 +66,7 @@ export default function AnimeRow({fetchUrl, title}) {
 
             <AnimeRowContainer >
                 <TitleHeader>{title}</TitleHeader>
-                <Line/>
+                <Line style = {{backgroundImage: `linear-gradient(to right, ${color1}, ${color2})`}}/>
                 <RowContainer ref = {ref} >
                     <LeftContainer  arrowLeft = {arrowLeft} >
                         <LeftArrow onClick = {() => scrollR()} mediaArrow = {mediaArrow}/>

@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import { FeaturedContainer, MobilePoster, InfoContainer, Featured, Poster, Diamond, Subbed, Type, Text, Title, Container } from './styled'
+import { FeaturedContainer, MobilePoster, InfoContainer, Featured, Poster, Diamond, Subbed, Type, Text, Title, Container, PlayButton, AddToList } from './styled'
 import axios from 'axios'
+import {FiPlay} from 'react-icons/fi'
+import {FaRegBookmark} from 'react-icons/fa'
 
 export default function FeaturedAnime({fetchUrl, n}) {
     const [featuredList, setFeaturedList] = useState([])
@@ -32,6 +34,7 @@ export default function FeaturedAnime({fetchUrl, n}) {
                 <InfoContainer>
                     <Title>{anime.title}</Title>
                     <Text><Type>Series</Type><Subbed><Diamond/>Subtitled</Subbed></Text>
+                    <Text><PlayButton><FiPlay/>START WATCHING S1 E1</PlayButton><AddToList><FaRegBookmark style = {{paddingRight: '2px'}}/>ADD TO WATCHLIST</AddToList></Text>
                 </InfoContainer>
             </Featured>
             ))}

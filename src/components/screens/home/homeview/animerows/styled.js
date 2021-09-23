@@ -7,7 +7,9 @@ export const AnimeRowContainer = styled.div`
     flex-direction: column;
     width: 90vw;
     max-width: 1050px;
-    margin: 90px;
+    margin-left: 90px;
+    margin-right: 90px;
+    margin-top: 50px;
     @media screen and (max-width: 975px){
        width: 88vw;
     }
@@ -82,9 +84,9 @@ export const TitleHeader = styled.div`
 
 `
 export const Line = styled.div`
-    height: 3px;
+    height: 4px;
     width: 100%;
-    background-color: #ffb100;
+    /* background-image: linear-gradient(to right, #00ccff, #003d4d); */
 
 `
 export const RowContainer = styled.div`

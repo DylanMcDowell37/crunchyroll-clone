@@ -3,7 +3,7 @@ import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
 
 export const TopContainer = styled.div`
     width: 100vw;
-    background-color: ${({ background })=> (background ? '#ffb100' : 'lightblue')};;
+    background-image: ${({ background })=> (background ? 'linear-gradient(.15turn, #ff5c33, #ffcc00)' : 'linear-gradient(.15turn, #00ccff, #003d4d)')};;
     position: relative;
     margin-top: 60px;
     right: 0; 
