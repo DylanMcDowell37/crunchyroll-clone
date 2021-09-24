@@ -8,9 +8,9 @@ export default function MediaLinks({isOpen, toggle}) {
         <>
         <MediaNavContainer isOpen = {isOpen} onClick = {toggle}>
                 <Title>BROWSE</Title>
-                <Links>Popular</Links>
-                <Links>New</Links>
-                <Links>Alphabetical</Links>
+                <Links href = "/anime">Popular</Links>
+                <Links href = "/anime/new">New</Links>
+                <Links href = "/anime/alpabetical">Alphabetical</Links>
                 <Links>Genres</Links>
                 <hr style = {{opacity: '20%', marginTop: '10px'}}/>
                 <Links>Manga</Links>

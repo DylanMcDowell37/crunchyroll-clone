@@ -1,15 +1,15 @@
 import React from 'react'
 import { LinkContainer, Genres, GenresContainer, Container, Title, Links, BrowseContainer } from './styles'
-
+import {Link} from "react-router-dom"
 export default function BrowseScreen({browse, toggleBrowse}) {
     return (
         <>
             <BrowseContainer browse = {browse} onClick = {toggleBrowse}>
                 <LinkContainer>
-                    <Links>Popular</Links>
-                    <Links>New</Links>
-                    <Links>Alphabetical</Links>
-                    <Links>Genres</Links>
+                    <Links href = "/anime">Popular</Links>
+                    <Links href = "/anime/new">New</Links> 
+                    <Links href = "/anime/alphabetical">Alphabetical</Links>
+                    
                 </LinkContainer>
                 <hr style = {{opacity: '20%', height: '100%'}}/>
                 <GenresContainer>

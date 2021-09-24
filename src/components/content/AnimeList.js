@@ -6,6 +6,7 @@ export const requestAnime = {
     fetchSliceOfLife: "https://api.simkl.com/anime/genres/slice-of-life/all/all-networks/this-month",
     fetchComedy: "https://api.simkl.com/anime/genres/comedy/series/tokyomx/this-year/release-date",
     fectchBackToSchool: "https://api.simkl.com/anime/genres/school/all/all-networks/this-month",
-    fetchMagic: "https://api.simkl.com/anime/genres/magic/all/all-networks/this-month"
+    fetchMagic: "https://api.simkl.com/anime/genres/magic/all/all-networks/this-month",
+    fetchAll: "https://api.simkl.com/anime/genres/all/all-types/tokyomx/all-years/"
 }
 

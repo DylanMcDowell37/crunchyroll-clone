@@ -6,6 +6,9 @@ import MediaLinks from './header/mediaScreen'
 import BrowseScreen from './header/browseScreen'
 import PremiumDrop from './header/premiumDrop'
 import ProfileScreen from './header/profileScreen'
+import Footer from './footer'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import AnimeView from './anime'
 
 
 export default function Router() {
@@ -30,6 +33,7 @@ export default function Router() {
     }
 
     return (
+    <BrowserRouter>
         <Container>
             <MediaLinks 
                 isOpen = {isOpen} 
@@ -58,8 +62,17 @@ export default function Router() {
                 togglePremium = {togglePremium}
                 toggleProfileScreen = {toggleProfileScreen}
                 />
-            <Home/>
+            <Switch>
+                <Route exact path = "/">
+                    <Home/>
+                </Route>
+                <Route path = "/anime">
+                    <AnimeView/>
+                </Route>
+            </Switch>
+            <Footer/>
         </Container>
+    </BrowserRouter>
     )
 }
 

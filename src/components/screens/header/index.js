@@ -25,7 +25,7 @@ export default function HeaderHome({toggle, isOpen, browse, toggleBrowse, profil
                 </MediaMenuContainer> 
 
                 <LogoContainer>   
-                    <NavLogo href = "#/">
+                    <NavLogo href = "/">
                         <SiCrunchyroll/> 
                         <Text>
                             crunchyroll

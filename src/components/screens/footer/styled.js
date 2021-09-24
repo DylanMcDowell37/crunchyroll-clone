@@ -28,6 +28,20 @@ export const InfoContainer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    @media screen and (max-width: 575px){
+        flex-direction: column;
+    }
+
+`
+export const Break = styled.hr`
+    display: none;
+    @media screen and (max-width: 575px){
+        display: block;
+        opacity: 10%;
+        margin-top: 10px;
+        margin-bottom: 20px; 
+    }
+    
 
 `
 export const LinkContainer = styled.div`
