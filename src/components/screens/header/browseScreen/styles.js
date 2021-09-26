@@ -28,6 +28,11 @@ export const Links = styled.a`
     color: white;
     padding-bottom: 20px;
     padding-right: 60px;
+    text-decoration: none;
+    :hover{
+        color: gray;
+       
+    }
 
 `
 export const  LinkContainer = styled.div`

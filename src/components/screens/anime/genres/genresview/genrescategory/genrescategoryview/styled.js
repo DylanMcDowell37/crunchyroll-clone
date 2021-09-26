@@ -60,12 +60,17 @@ export const FectchedContainer = styled.div`
         background-color: #0d0d0d;
     }
     @media screen and (max-width: 575px){
-        margin-right: 1px;
+        margin-right: 3px;
+        width: 130px;
     }
 `
 export const Poster = styled.img`
     object-fit: contain;
     width: 150px;
+    @media screen and (max-width: 575px){
+        
+        width: 130px;
+    }
     
     
 `

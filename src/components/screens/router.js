@@ -31,13 +31,20 @@ export default function Router() {
         setProfileScreen(!profileScreen)
         setIsOpen(false)
     }
-
+    const [isOpenGenres, setIsOpenGenres] = useState(false)
+    const toggleGenres = () =>{
+        setIsOpenGenres(!isOpenGenres)
+        setIsOpen(true)
+        
+      }
     return (
     <BrowserRouter>
         <Container>
             <MediaLinks 
                 isOpen = {isOpen} 
                 toggle = {toggle}
+                isOpenGenres = {isOpenGenres}
+                toggleGenres = {toggleGenres}
                 />
             <BrowseScreen 
                 browse = {browse}
@@ -69,6 +76,7 @@ export default function Router() {
                 <Route path = "/anime">
                     <AnimeView/>
                 </Route>
+                
             </Switch>
             <Footer/>
         </Container>
@@ -77,7 +85,12 @@ export default function Router() {
 }
 
 export const Container = styled.div`
-    ::-webkit-scrollbar{
-      display: none;
-    } 
+    overflow-x: hidden;
+   ::-webkit-scrollbar{
+       display: none;
+   }
+    
+    
+ 
+  
 `

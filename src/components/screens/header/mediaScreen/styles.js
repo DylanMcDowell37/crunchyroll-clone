@@ -33,5 +33,10 @@ export const Links = styled.a`
     color: white;
     font-size: 18px;
     margin-left: 20px;
+    text-decoration: none;
+    :hover{
+        color: gray;
+       
+    }
 `
  

@@ -21,6 +21,8 @@ export const Container = styled.div`
     flex-direction: column;
     background-color: black;
     align-items: center;
+    
+    
    
     
 `
@@ -80,12 +82,6 @@ export const TitleHeader = styled.div`
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 15px;
-
-`
-export const Line = styled.div`
-    height: 4px;
-    width: 100%;
-    /* background-image: linear-gradient(to right, #00ccff, #003d4d); */
 
 `
 export const RowContainer = styled.div`
@@ -185,7 +181,7 @@ export const RightContainer = styled.div`
     display: ${({ arrowRight })=> (arrowRight ? 'flex' : 'none')};
     @media screen and (max-width: 575px){
             height: 70%;
-            
+            right: 1vw;
     } 
     @media screen and (min-width: 1225px){
         left: auto;

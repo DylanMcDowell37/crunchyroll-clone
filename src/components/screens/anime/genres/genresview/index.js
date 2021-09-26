@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { TextContainer, Link, RightArrow, RightContainer, LeftArrow, LeftContainer, Type, Subbed, Text, RowContainer, Line, Container, TitleHeader, Title, Row, Poster, AnimeRowContainer, Diamond } from './styled'
+import { Link, RightArrow, RightContainer, LeftArrow, LeftContainer, Type, Subbed, Text, RowContainer, Container, TitleHeader, Title, Row, Poster, AnimeRowContainer, Diamond, TextContainer } from './styled'
 import axios from 'axios'
 
 
-export default function AnimeRow({fetchUrl, title, color1, color2, link}) {
+
+export default function Genres({fetchUrl, title, link}) {
     //https://simkl.in/posters/72/7248108487b1ea37_ca.webp
     const [animeList, setAnimeList] = useState([])
     let ref = useRef();
@@ -66,10 +67,9 @@ export default function AnimeRow({fetchUrl, title, color1, color2, link}) {
 
             <AnimeRowContainer >
                 <TextContainer>
-                    <TitleHeader>{title}</TitleHeader>
-                    <Link href = {link}>View All</Link>
+                <TitleHeader>{title}</TitleHeader>
+                <Link href = {link}>View All</Link>
                 </TextContainer>
-                <Line style = {{backgroundImage: `linear-gradient(to right, ${color1}, ${color2})`}}/>
                 <RowContainer ref = {ref} >
                     <LeftContainer  arrowLeft = {arrowLeft} >
                         <LeftArrow onClick = {() => scrollR()} mediaArrow = {mediaArrow}/>

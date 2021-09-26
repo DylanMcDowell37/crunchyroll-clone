@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import { Poster, Subbed, Diamond, AnimeContainer, AnimeTitle, Container, FectchedContainer, FetchedAnime, InfoContainer, Series, Sort, Title, TitleContainer } from './styled'
+import { Poster, Subbed, Diamond, AnimeContainer, AnimeTitle, Container, FectchedContainer, FetchedAnime, InfoContainer, Series, Title, TitleContainer } from './styled'
 import axios from 'axios'
 
-export default function Anime({fetchUrl, title, sort, n}) {
+export default function GenresCategory({fetchUrl, title, type, n}) {
     const [animeList, setAnimeList] = useState([])
 
     useEffect(() => {
@@ -29,8 +29,7 @@ export default function Anime({fetchUrl, title, sort, n}) {
         <Container>         
             <AnimeContainer>
                 <TitleContainer>
-                    <Title>Browse {title}</Title>
-                    <Sort>{sort}</Sort>
+                    <Title>{type}/{title}</Title>
                 </TitleContainer> 
                 <FetchedAnime>
                 {animeList.map((anime)=>(
