@@ -1,7 +1,8 @@
 import React  from 'react'
-import { Profile, MiddleContainer, WatchListContainer, SearchContainer, StoreContainer, NewsContainer, GamesContainer, MangaContainer, BrowserContainer, NavigationContainer, LogoContainer, MediaMenuContainer, LeftContainer, MiniText, Search, Bookmark, RightContainer, CrownIcon, Text, MediaNav,  NavLogo, HeaderContainer, ProfileContainer, Arrow, PremiumContainer, MiniTextContainer} from './styles' 
+import { Profile, MiddleContainer, WatchListContainer, SearchContainer, StoreContainer, NewsContainer, GamesContainer, MangaContainer, BrowserContainer, NavigationContainer, LogoContainer, MediaMenuContainer, LeftContainer, MiniText, Search, Bookmark, RightContainer, CrownIcon, Text, MediaNav,  NavLogo, HeaderContainer, ProfileContainer, Arrow, PremiumContainer, MiniTextContainer, Drop} from './styles' 
 import {AiOutlineMenu} from "react-icons/ai"
 import { SiCrunchyroll } from "react-icons/si"
+import PremiumDrop from './premiumDrop'
 
 
 
@@ -64,15 +65,18 @@ export default function HeaderHome({toggle, isOpen, browse, toggleBrowse, profil
             </MiddleContainer>
 
             <RightContainer>
-
                 <PremiumContainer onMouseEnter = {togglePremium} onMouseLeave = {togglePremium}>
+                    
                     <CrownIcon/>
                     <MiniTextContainer>
                         <MiniText style = {{color: "#ffb100"}}>TRY FREE</MiniText>
                         <MiniText style = {{color: "white"}}>PREMIUM</MiniText>
-                    </MiniTextContainer>                    
-                </PremiumContainer>
-
+                    </MiniTextContainer> 
+                    <PremiumDrop 
+                        togglePremium = {togglePremium} 
+                         premium = {premium}
+                    />                        
+                </PremiumContainer>  
                 <SearchContainer>
                     <Search/>
                 </SearchContainer>

@@ -9,7 +9,7 @@ import FeaturedAnime from './featuredAnime'
 export default function HomeView() {
     //background-image: linear-gradient(to right, #00ccff, #003d4d);
     return (
-        <Container>
+        <Container >
             <Top fetchUrl = {requestAnime.fetchTopFeature}/>
             <AnimeRow title = {'Most Popular'} fetchUrl = {requestAnime.fetchPopular} color1 = {'#ff5c33'} color2 ={'#ffb100'} link = {'/anime/'}/>
             <AnimeRow title = {'Just Updated'} fetchUrl = {requestAnime.fetchUpdatedThisWeek} color1 = {'#00ccff'} color2 ={'#003d4d'} link = {'/anime/new'}/>

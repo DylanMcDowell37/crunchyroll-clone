@@ -90,3 +90,12 @@ export const Diamond = styled(BsDiamondFill)`
     font-size: 5px;
     padding: 2px;
 `
+export const YouTubeContainer = styled.div`
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    top: 80px;
+    left: 0;
+`

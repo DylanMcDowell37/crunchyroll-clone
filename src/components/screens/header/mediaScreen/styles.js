@@ -5,16 +5,20 @@ export const MediaNavContainer = styled.div`
     position: fixed;
     z-index: 999;
     width: 300px;
-    height: calc(100% - 60px);
+    height: calc(100vh - 60px);
     background-color: #0d0d0d;
-    display: grid;  
-    align-items: center;
+    display: grid;
     margin-top: 60px;
     left: 0;
+    overflow-y: scroll;
+    scroll-snap-type: smooth;
+    ::-webkit-scrollbar{
+        display: none;
+    }
     transition: 0.1s ease-in-out;
     opacity: ${({ isOpen })=> (isOpen ? '100%': '0')};
     top: ${({ isOpen })=> (isOpen ? '0' : '-100%')};
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 575px){
         width: 100%;
     }
     @media screen and (min-width: 975px){
@@ -25,18 +29,34 @@ export const MediaNavContainer = styled.div`
 `
 export const Title = styled.p`
     color: gray;
-    margin-left: 20px;
-    font-size: 12px;
+    font-size: 12px;    
+    width: 100%;
+    padding: 17px;
+    display: flex;
+    align-items: center;
+
+`
+export const Break = styled.div`
+    height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
 
 `
 export const Links = styled.a`
     color: white;
-    font-size: 18px;
-    margin-left: 20px;
+    font-size: 17px;
+    width: 100%;
+    padding: 18px;
     text-decoration: none;
     :hover{
-        color: gray;
+        background-color: rgb(26, 26, 26, 0.6);
        
     }
+`
+export const GenresContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+
 `
  

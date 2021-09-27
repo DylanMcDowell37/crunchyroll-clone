@@ -5,7 +5,7 @@ import {GiFlatStar, GiLaurelCrown} from "react-icons/gi"
 
 export const PremiumDropContainer = styled.div`
     position: fixed;
-    z-index: 2;
+    z-index: 5;
     width: 400px;
     height: 200px;
     background-color: transparent;
@@ -15,12 +15,16 @@ export const PremiumDropContainer = styled.div`
     margin-top: 52px;
     right: 50px;
     transition: 0.2s ease-in-out;
-    opacity: ${({ premium })=> (premium ? '100%': '0')};
+    display: ${({ premium })=> (premium ? 'flex' : 'none')};
     top: ${({ premium })=> (premium ? '0' : '-100%')};
-
+    @media screen and (max-width: 575px){
+        width: 180px;
+        height: 400px;
+    }
 
 
 `
+
 export const Drop =  styled.div`
     width: 350px;
     height: 150px;
@@ -29,6 +33,10 @@ export const Drop =  styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media screen and (max-width: 575px){
+        width: 250px;
+        height: 150px;
+    }
 
 
 `
@@ -45,6 +53,9 @@ export const SmallStar = styled(GiFlatStar)`
     padding-top: 31px;
     padding-right: 265px;
     font-size: 9px;
+    @media screen and (max-width: 575px){
+        padding-right: 195px;
+    }
 `
 export const BigStar = styled(GiFlatStar)`
     color: white;
@@ -53,6 +64,9 @@ export const BigStar = styled(GiFlatStar)`
     padding-right: 300px;
     font-size: 12px;
     font-weight: bold;
+    @media screen and (max-width: 575px){
+        padding-right: 225px;
+    }
 `
 export const CrownIcon = styled(GiLaurelCrown)` 
     color: #ffb100;
@@ -72,5 +86,6 @@ export const TopText = styled.div`
 export const BodyText = styled.div`
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
+    font-size: 15px;
 `

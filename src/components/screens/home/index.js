@@ -5,8 +5,8 @@ import { Container } from './styled'
 export default function Home() {
 
     return (
-        <Container>
-            <HomeView/>
+        <Container >
+            <HomeView />
         </Container> 
     )
 }

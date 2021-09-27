@@ -39,7 +39,7 @@ export default function Router() {
       }
     return (
     <BrowserRouter>
-        <Container>
+        <Container isOpen = {isOpen}>
             <MediaLinks 
                 isOpen = {isOpen} 
                 toggle = {toggle}
@@ -54,11 +54,6 @@ export default function Router() {
                 profileScreen = {profileScreen}
                 toggleProfileScreen = {toggleProfileScreen}
             />
-            <PremiumDrop
-                premium = {premium}
-                togglePremium = {togglePremium}
-            />
-
             <HeaderHome 
                 isOpen = {isOpen} 
                 toggle = {toggle}
@@ -71,10 +66,10 @@ export default function Router() {
                 />
             <Switch>
                 <Route exact path = "/">
-                    <Home/>
+                    <Home />
                 </Route>
                 <Route path = "/anime">
-                    <AnimeView/>
+                    <AnimeView  />
                 </Route>
                 
             </Switch>

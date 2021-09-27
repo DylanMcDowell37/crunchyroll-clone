@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { TextContainer, Link, RightArrow, RightContainer, LeftArrow, LeftContainer, Type, Subbed, Text, RowContainer, Line, Container, TitleHeader, Title, Row, Poster, AnimeRowContainer, Diamond } from './styled'
 import axios from 'axios'
+import YouTube from 'react-youtube';
+import movieTrailer from 'movie-trailer';
 
 
 export default function AnimeRow({fetchUrl, title, color1, color2, link}) {
@@ -11,7 +13,8 @@ export default function AnimeRow({fetchUrl, title, color1, color2, link}) {
     const [arrowLeft, setArrowLeft] = useState(false)
     const [arrowRight, setArrowRight] = useState(true)
     const [mediaArrow, setMediaArrow] = useState(false)
-
+    const [trailerUrl, setTrailerUrl] = useState('')
+    const [animeUrl, setAnimeUrl] = useState('')
     useEffect(() => {
         async function fetchData(){
             const response = await axios.get(fetchUrl)
@@ -22,6 +25,12 @@ export default function AnimeRow({fetchUrl, title, color1, color2, link}) {
         fetchData() 
 
     }, [fetchUrl])
+    const opts = {
+        width: '100%',
+        height: '390px',
+        
+
+    }
     console.log(animeList)
     const scroll = (scrollPos) => {
         ref.current.scrollLeft += scrollPos         
@@ -61,6 +70,24 @@ export default function AnimeRow({fetchUrl, title, color1, color2, link}) {
     useEffect(() =>{
         ref.current.addEventListener('mouseout', mouseOutArrowMedia)
     })
+    useEffect(() =>{
+        async function fetchAnime(){
+            const response = await axios.get(`https://api.simkl.com/${animeUrl}?extended=full`)
+            console.log(response.data)
+            setTrailerUrl(response.data.trailers[0].youtube)
+        }
+        fetchAnime()
+    }, [animeUrl])
+    const handdleVid = (anime) =>{
+        if(trailerUrl){
+            setTrailerUrl('')
+        }
+        
+            setAnimeUrl(anime)
+        
+        
+    }
+    console.log(trailerUrl)
     return (
         <Container>
 
@@ -75,8 +102,8 @@ export default function AnimeRow({fetchUrl, title, color1, color2, link}) {
                         <LeftArrow onClick = {() => scrollR()} mediaArrow = {mediaArrow}/>
                     </LeftContainer>
                     {animeList.map((anime)=>(
-                        <Row ref = {animeRef}>                            
-                            <Poster key = {anime.id} src = {`https://simkl.in/posters/${anime.poster}_ca.webp`} alt = {anime.title}/> 
+                        <Row ref = {animeRef} onClick = {() => handdleVid(anime.url)}>                            
+                            <Poster  key = {anime.id} src = {`https://simkl.in/posters/${anime.poster}_ca.webp`} alt = {anime.title}/> 
                             <Title>{anime.title}</Title>
                             <Text><Type>Series</Type><Subbed><Diamond/>Subtitled</Subbed></Text>
                         </Row>
@@ -86,6 +113,7 @@ export default function AnimeRow({fetchUrl, title, color1, color2, link}) {
                         <RightArrow onClick = {() => scrollL()} mediaArrow = {mediaArrow} />
                     </RightContainer>
                 </RowContainer>
+           {trailerUrl && <YouTube videoId = {trailerUrl} opts = {opts} />}
             </AnimeRowContainer>
 
         </Container>

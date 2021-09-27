@@ -76,9 +76,9 @@ export const MediaNav = styled.div `
             font-size: 25px;
             cursor: pointer;
             :hover{
-                background-color: black;
+                background-color: rgb(0, 0, 0, 0.65);
             }
-            background-color: ${({ isOpen })=> (isOpen ? 'black': '#262626')};
+            background-color: ${({ isOpen })=> (isOpen ? 'rgb(0, 0, 0, 0.65)': '#262626')};
 
     }
 
