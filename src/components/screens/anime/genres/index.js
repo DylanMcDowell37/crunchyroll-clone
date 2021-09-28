@@ -5,13 +5,13 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import { GenresContainer } from './styled'
 import GenreCategoryView from './genresview/genrescategory'
 
-export default function GenreView() {
+export default function GenreView({toggleEpisode}) {
     return (
         <BrowserRouter >
             <Switch>
                 <GenresContainer>
-                    <Route exact path = "/anime/action">
-                        <Genres fetchUrl = {`${requestAnime.fetchActionAll}rank`} title = {'Popular Action'} link = {'/anime/action/popular'} />
+                    <Route exact path = "/anime/action" >
+                        <Genres fetchUrl = {`${requestAnime.fetchActionAll}rank`} title = {'Popular Action'} link = {'/anime/action/popular'} toggleEpisode = {toggleEpisode}/>
                         <Genres fetchUrl = {`${requestAnime.fetchActionAll}release-date`} title = {'New'}  link = {'/anime/action/new'} />
                         <Genres fetchUrl = {`${requestAnime.fetchActionAll}a-z`} title = {'Alphabetical'}  link = {'/anime/action/alphabetical'}/>
                     </Route>                   

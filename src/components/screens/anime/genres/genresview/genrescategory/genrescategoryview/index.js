@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { YouTubeContainer, Poster, Subbed, Diamond, AnimeContainer, AnimeTitle, Container, FectchedContainer, FetchedAnime, InfoContainer, Series, Title, TitleContainer } from './styled'
+import {AnimeInfo, EpisodeCount, EpisodeInfo, EpisodeOverview, EpisodeTitle, Certification, Subtitle, Rating, RatingContainer, Exit, YouTubeContainer, Poster, Subbed, Diamond, AnimeContainer, AnimeTitle, Container, FectchedContainer, FetchedAnime, InfoContainer, Series, Title, TitleContainer } from './styled'
 import axios from 'axios'
 import YouTube from 'react-youtube'
 
@@ -7,6 +7,9 @@ export default function GenresCategory({fetchUrl, title, type, n}) {
     const [animeList, setAnimeList] = useState([])
     const [trailerUrl, setTrailerUrl] = useState('')
     const [animeUrl, setAnimeUrl] = useState('')
+    const [overview, setOverview] = useState('')
+    const [rating, setRating] = useState('')
+  
 
     useEffect(() => {
         async function fetchData(){
@@ -29,8 +32,6 @@ export default function GenresCategory({fetchUrl, title, type, n}) {
     }, [fetchUrl])
     console.log(animeList)
     const opts = {
-        width: '450px',
-        height: '300px',
         playerVars: {
             autoplay: 1,
         }
@@ -41,21 +42,26 @@ export default function GenresCategory({fetchUrl, title, type, n}) {
             const response = await axios.get(`https://api.simkl.com/${animeUrl}?extended=full`)
             console.log(response.data)
             setTrailerUrl(response.data.trailers[0].youtube)
+            setRating(response.data.ratings.mal)
+            setOverview(response.data)
         }
         fetchAnime()
     }, [animeUrl])
+   
     const handdleVid = (anime) =>{
         if(trailerUrl){
             setTrailerUrl('')
         }
         
-            setAnimeUrl(anime)
+            setAnimeUrl(anime || '')
         
         
     }
+     
+
     return (
-        <Container>         
-            <AnimeContainer>
+        <Container >         
+            <AnimeContainer >
                 <TitleContainer>
                     <Title>{type}/{title}</Title>
                 </TitleContainer> 
@@ -70,7 +76,24 @@ export default function GenresCategory({fetchUrl, title, type, n}) {
                     ))}
                 </FetchedAnime>
                 
-                {trailerUrl && <YouTubeContainer><YouTube videoId = {trailerUrl} opts = {opts} /></YouTubeContainer>}
+                {trailerUrl && <YouTubeContainer>
+                        <Exit onClick = {() => setTrailerUrl('')}>X</Exit>
+                        <YouTube videoId = {trailerUrl} opts = {opts} />
+                            <AnimeInfo>
+                                <EpisodeTitle>{overview.title}</EpisodeTitle>
+                                <EpisodeInfo>
+                                    <EpisodeCount>{overview.total_episodes} Videos</EpisodeCount>
+                                    <Certification>{overview.certification}</Certification>
+                                    <Subtitle>Subtitled</Subtitle>
+                                </EpisodeInfo>
+                                <RatingContainer>
+                                    <Rating>Average Rating: {rating.rating}/10</Rating>
+                                </RatingContainer>
+                                <EpisodeOverview>{overview.overview}</EpisodeOverview>
+                                
+                                
+                            </AnimeInfo>
+                    </YouTubeContainer> }
             </AnimeContainer>
         </Container>
     )

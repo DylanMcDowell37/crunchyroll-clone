@@ -4,7 +4,6 @@ import styled from "styled-components"
 import HeaderHome from './header'
 import MediaLinks from './header/mediaScreen'
 import BrowseScreen from './header/browseScreen'
-import PremiumDrop from './header/premiumDrop'
 import ProfileScreen from './header/profileScreen'
 import Footer from './footer'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
@@ -16,6 +15,8 @@ export default function Router() {
     const [browse, setBrowse] = useState(false)
     const [premium, setPremium] = useState(false)
     const [profileScreen, setProfileScreen] = useState(false)
+    
+    
     const toggle = () =>{
       setIsOpen(!isOpen)
       setProfileScreen(false)
@@ -37,6 +38,7 @@ export default function Router() {
         setIsOpen(true)
         
       }
+    
     return (
     <BrowserRouter>
         <Container isOpen = {isOpen}>
@@ -69,7 +71,7 @@ export default function Router() {
                     <Home />
                 </Route>
                 <Route path = "/anime">
-                    <AnimeView  />
+                    <AnimeView />
                 </Route>
                 
             </Switch>

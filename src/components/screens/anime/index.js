@@ -6,6 +6,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 
 export default function AnimeView() {
+    
     return (
         <BrowserRouter >
             <Switch>
@@ -18,10 +19,12 @@ export default function AnimeView() {
                 <Route path = "/anime/alphabetical">
                     <Anime fetchUrl = {`${requestAnime.fetchAll}a-z?page=`} title = {'Alphabetical'} sort = {'ALPHABETICAL'} n = {11}/>
                 </Route>
-                <GenreView/>
+                
+                <GenreView />
+                
+                 
             </Switch>
         </BrowserRouter>
     )
 }
 
-{/*  */}

@@ -202,3 +202,85 @@ export const TextContainer = styled.div`
     justify-content: space-between;
 
 `
+export const YouTubeContainer = styled.div`
+    position: fixed;
+    z-index: 10;
+    width: 100vw;
+    background-color: black;
+    top: 60px;
+    left: 0;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-snap-type: smooth;
+    ::-webkit-scrollbar{
+        display: none;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    overflow-y: scroll;
+    padding: 20px;
+    
+    
+    
+`
+export const Exit = styled.div`
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    color: white;
+    z-index: 20;
+    background-color: rgb(26, 26, 26, 0.5);
+
+
+`
+export const AnimeInfo = styled.div`
+    max-width: 1050px;
+    width: 80vw;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    height: 100%;
+    padding-bottom: 100px;
+    
+    
+    
+    
+`
+export const EpisodeTitle = styled.h1`
+    padding: 10px;
+`
+export const EpisodeOverview = styled.div`
+
+`
+export const RatingContainer = styled.div`
+    padding: 20px;
+
+`
+export const Rating = styled.p`
+
+`
+export const Certification = styled.p`
+    padding-left: 4px;
+`
+export const Subtitle = styled.p`
+    padding-left: 4px;
+
+`
+export const EpisodeCount = styled.p`
+
+`
+export const Genres = styled.div`
+    width: 100%;
+    
+
+`
+export const EpisodeInfo = styled.div`
+    display: flex;
+    
+    padding: 10px;
+    
+`

@@ -14,7 +14,7 @@ export default function GenreCategoryView() {
                     <Route path = "/anime/action/new">
                         <GenresCategory fetchUrl = {`${requestAnime.fetchActionAll}release-date`} title = {'New'} type = {'Action'} n = {12} />
                     </Route>
-                    <Route path = "/anime/action alphabetical">
+                    <Route path = "/anime/action/alphabetical">
                         <GenresCategory fetchUrl = {`${requestAnime.fetchActionAll}a-z`} title = {'Alphabetical'} type = {'Action'} n = {12}/>
                     </Route>                   
                     <Route path = "/anime/adventure/popular">

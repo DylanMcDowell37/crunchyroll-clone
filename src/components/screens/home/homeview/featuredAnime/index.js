@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { FeaturedContainer, MobilePoster, InfoContainer, Featured, Poster, Diamond, Subbed, Type, Text, Title, Container, PlayButton, AddToList } from './styled'
+import { AnimeInfo, EpisodeCount, EpisodeInfo, EpisodeOverview, EpisodeTitle, Certification, Subtitle, Rating, RatingContainer, YouTubeContainer, FeaturedContainer, MobilePoster, InfoContainer, Featured, Poster, Diamond, Subbed, Type, Text, Title, Container, PlayButton, AddToList, Exit } from './styled'
 import axios from 'axios'
 import {FiPlay} from 'react-icons/fi'
 import {FaRegBookmark} from 'react-icons/fa'
@@ -9,6 +9,9 @@ export default function FeaturedAnime({fetchUrl, n}) {
     const [featuredList, setFeaturedList] = useState([])
     const [trailerUrl, setTrailerUrl] = useState('')
     const [animeUrl, setAnimeUrl] = useState('')
+    const [overview, setOverview] = useState('')
+    const [rating, setRating] = useState('')
+  
 
     useEffect(() => {
         async function fetchData(){
@@ -28,8 +31,6 @@ export default function FeaturedAnime({fetchUrl, n}) {
 
     console.log(featuredList)
     const opts = {
-        width: '100%',
-        height: '390px',
         playerVars: {
             autoplay: 1,
         }
@@ -40,9 +41,12 @@ export default function FeaturedAnime({fetchUrl, n}) {
             const response = await axios.get(`https://api.simkl.com/${animeUrl}?extended=full`)
             console.log(response.data)
             setTrailerUrl(response.data.trailers[0].youtube)
+            setRating(response.data.ratings.mal)
+            setOverview(response.data)
         }
         fetchAnime()
     }, [animeUrl])
+
     const handdleVid = (anime) =>{
         if(trailerUrl){
             setTrailerUrl('')
@@ -67,7 +71,24 @@ export default function FeaturedAnime({fetchUrl, n}) {
                 </InfoContainer>
             </Featured>
             ))}
-            {trailerUrl && <YouTube videoId = {trailerUrl} opts = {opts} />}
+           {trailerUrl && <YouTubeContainer>
+                        <Exit onClick = {() => setTrailerUrl('')}>X</Exit>
+                        <YouTube videoId = {trailerUrl} opts = {opts} />
+                            <AnimeInfo>
+                                <EpisodeTitle>{overview.title}</EpisodeTitle>
+                                <EpisodeInfo>
+                                    <EpisodeCount>{overview.total_episodes} Videos</EpisodeCount>
+                                    <Certification>{overview.certification}</Certification>
+                                    <Subtitle>Subtitled</Subtitle>
+                                </EpisodeInfo>
+                                <RatingContainer>
+                                    <Rating>Average Rating: {rating.rating}/10</Rating>
+                                </RatingContainer>
+                                <EpisodeOverview>{overview.overview}</EpisodeOverview>
+                                
+                                
+                            </AnimeInfo>
+                    </YouTubeContainer> }
             </FeaturedContainer>
         </Container>
 

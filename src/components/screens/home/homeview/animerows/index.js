@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { TextContainer, Link, RightArrow, RightContainer, LeftArrow, LeftContainer, Type, Subbed, Text, RowContainer, Line, Container, TitleHeader, Title, Row, Poster, AnimeRowContainer, Diamond } from './styled'
+import {AnimeInfo, EpisodeCount, EpisodeInfo, EpisodeOverview, EpisodeTitle, Certification, Subtitle, Rating, RatingContainer, YouTubeContainer, Exit, TextContainer, Link, RightArrow, RightContainer, LeftArrow, LeftContainer, Type, Subbed, Text, RowContainer, Line, Container, TitleHeader, Title, Row, Poster, AnimeRowContainer, Diamond } from './styled'
 import axios from 'axios'
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
@@ -15,6 +15,9 @@ export default function AnimeRow({fetchUrl, title, color1, color2, link}) {
     const [mediaArrow, setMediaArrow] = useState(false)
     const [trailerUrl, setTrailerUrl] = useState('')
     const [animeUrl, setAnimeUrl] = useState('')
+    const [overview, setOverview] = useState('')
+    const [rating, setRating] = useState('')
+  
     useEffect(() => {
         async function fetchData(){
             const response = await axios.get(fetchUrl)
@@ -26,8 +29,9 @@ export default function AnimeRow({fetchUrl, title, color1, color2, link}) {
 
     }, [fetchUrl])
     const opts = {
-        width: '100%',
-        height: '390px',
+        playerVars: {
+            autoplay: 1,
+        }
         
 
     }
@@ -75,6 +79,8 @@ export default function AnimeRow({fetchUrl, title, color1, color2, link}) {
             const response = await axios.get(`https://api.simkl.com/${animeUrl}?extended=full`)
             console.log(response.data)
             setTrailerUrl(response.data.trailers[0].youtube)
+            setRating(response.data.ratings.mal)
+            setOverview(response.data)
         }
         fetchAnime()
     }, [animeUrl])
@@ -113,7 +119,24 @@ export default function AnimeRow({fetchUrl, title, color1, color2, link}) {
                         <RightArrow onClick = {() => scrollL()} mediaArrow = {mediaArrow} />
                     </RightContainer>
                 </RowContainer>
-           {trailerUrl && <YouTube videoId = {trailerUrl} opts = {opts} />}
+                {trailerUrl && <YouTubeContainer>
+                        <Exit onClick = {() => setTrailerUrl('')}>X</Exit>
+                        <YouTube videoId = {trailerUrl} opts = {opts} />
+                            <AnimeInfo>
+                                <EpisodeTitle>{overview.title}</EpisodeTitle>
+                                <EpisodeInfo>
+                                    <EpisodeCount>{overview.total_episodes} Videos</EpisodeCount>
+                                    <Certification>{overview.certification}</Certification>
+                                    <Subtitle>Subtitled</Subtitle>
+                                </EpisodeInfo>
+                                <RatingContainer>
+                                    <Rating>Average Rating: {rating.rating}/10</Rating>
+                                </RatingContainer>
+                                <EpisodeOverview>{overview.overview}</EpisodeOverview>
+                                
+                                
+                            </AnimeInfo>
+                    </YouTubeContainer> }
             </AnimeRowContainer>
 
         </Container>
