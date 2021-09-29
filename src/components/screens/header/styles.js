@@ -31,9 +31,12 @@ export const NavLogo = styled.a`
     font-size: 25px;
     padding: 20px;
     text-decoration: none;
-    :hover{
+    @media (hover: hover){
+       :hover{
         color: white;
+    } 
     }
+    
     color: #ff5c33;
     font-family: Arial, Helvetica, sans-serif;
 
@@ -75,9 +78,12 @@ export const MediaNav = styled.div `
             padding: 20px;
             font-size: 25px;
             cursor: pointer;
-            :hover{
+            @media (hover: hover){
+               :hover{
                 background-color: rgb(0, 0, 0, 0.65);
+            }  
             }
+           
             background-color: ${({ isOpen })=> (isOpen ? 'rgb(0, 0, 0, 0.65)': '#262626')};
 
     }
@@ -101,9 +107,12 @@ export const PremiumContainer = styled.div`
     align-items: center;
     height: 60px;
     width: 90px;
-    :hover{
+    @media (hover: hover){
+      :hover{
         background-color: black;
+    }  
     }
+    
     
 
 `
@@ -112,18 +121,24 @@ export const SearchContainer = styled.div`
     width: 65px;
     display: flex;
     align-items: center;
-    :hover{
+    @media (hover: hover){
+       :hover{
         background-color: black;
+    } 
     }
+    
 `
 export const WatchListContainer = styled.div`
     height: 60px;
     width: 65px;
     display: flex;
     align-items: center;
-    :hover{
+    @media (hover: hover){
+        :hover{
         background-color: black;
+    } 
     }
+   
     @media screen and (max-width: 575px){
         display: none;
     }
@@ -171,9 +186,12 @@ export const ProfileContainer = styled.div`
     align-items: center;
     height: 60px;
     width: 80px;
-    :hover{
+    @media (hover: hover){
+        :hover{
         background-color: black;
+    } 
     }
+   
     background-color: ${({ profileScreen })=> (profileScreen ? 'black': '#262626')};
     
 
@@ -241,20 +259,28 @@ export const BrowserContainer = styled.div`
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    :hover{
-        background-color: black;
-    }
+    @media (hover: hover){
+        :hover{
+            background-color: black;
+        }
+    } 
+  
     background-color: ${({ browse })=> (browse ? 'black': '#262626')};
 `
-export const MangaContainer = styled.div`
+export const MangaContainer = styled.a`
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     width: 75px;
-    :hover{
+    text-decoration: none;
+    color: white;
+    @media(hover: hover){
+        :hover{
         background-color: black;
+    } 
     }
+   
 `
 export const GamesContainer = styled.div`
     height: 60px;
@@ -262,9 +288,12 @@ export const GamesContainer = styled.div`
     align-items: center;
     justify-content: space-evenly;
     width: 75px;
-    :hover{
+    @media (hover: hover){
+       :hover{
         background-color: black;
+    }  
     }
+   
 `
 export const NewsContainer = styled.div`
     height: 60px;
@@ -272,9 +301,12 @@ export const NewsContainer = styled.div`
     align-items: center;
     justify-content: space-evenly;
     width: 75px;
+    @media (hover: hover){
     :hover{
         background-color: black;
+    }  
     }
+
 `
 export const StoreContainer = styled.div`
     height: 60px;
@@ -282,7 +314,10 @@ export const StoreContainer = styled.div`
     align-items: center;
     justify-content: space-evenly;
     width: 75px;
-    :hover{
+    @media (hover: hover){
+       :hover{
         background-color: black;
+    }  
     }
+   
 `

@@ -45,7 +45,7 @@ export default function HeaderHome({toggle, isOpen, browse, toggleBrowse, profil
                         <Arrow/>
                     </BrowserContainer>
 
-                    <MangaContainer>
+                    <MangaContainer href = '/manga'>
                         Manga
                     </MangaContainer>
                         

@@ -31,6 +31,8 @@ export default function FeaturedAnime({fetchUrl, n}) {
 
     console.log(featuredList)
     const opts = {
+        width: '100%',
+        height: '100%',
         playerVars: {
             autoplay: 1,
         }
@@ -40,21 +42,19 @@ export default function FeaturedAnime({fetchUrl, n}) {
         async function fetchAnime(){
             const response = await axios.get(`https://api.simkl.com/${animeUrl}?extended=full`)
             console.log(response.data)
-            setTrailerUrl(response.data.trailers[0].youtube)
-            setRating(response.data.ratings.mal)
+            setTrailerUrl(response.data.trailers[0].youtube || '')
+            setRating(response.data.ratings.mal || '')
             setOverview(response.data)
         }
         fetchAnime()
     }, [animeUrl])
 
-    const handdleVid = (anime) =>{
-        if(trailerUrl){
-            setTrailerUrl('')
-        }
-        
-            setAnimeUrl(anime)
-        
-        
+    const handdleVid = (anime) =>{       
+        setAnimeUrl(anime)   
+    }
+    const handdleExit = () =>{
+        setTrailerUrl('')
+        setAnimeUrl('')
     }
 
     return (
@@ -71,18 +71,18 @@ export default function FeaturedAnime({fetchUrl, n}) {
                 </InfoContainer>
             </Featured>
             ))}
-           {trailerUrl && <YouTubeContainer>
-                        <Exit onClick = {() => setTrailerUrl('')}>X</Exit>
-                        <YouTube videoId = {trailerUrl} opts = {opts} />
+          {animeUrl && <YouTubeContainer>
+                        <Exit onClick = {() => handdleExit()}>X</Exit>
+                        <YouTube videoId = {trailerUrl || 'V_MX0HiIgRQ'} opts = {opts} />
                             <AnimeInfo>
-                                <EpisodeTitle>{overview.title}</EpisodeTitle>
+                                <EpisodeTitle>{overview.title || 'No Title'}</EpisodeTitle>
                                 <EpisodeInfo>
-                                    <EpisodeCount>{overview.total_episodes} Videos</EpisodeCount>
+                                    <EpisodeCount>{overview.total_episodes || "0"} Videos</EpisodeCount>
                                     <Certification>{overview.certification}</Certification>
                                     <Subtitle>Subtitled</Subtitle>
                                 </EpisodeInfo>
                                 <RatingContainer>
-                                    <Rating>Average Rating: {rating.rating}/10</Rating>
+                                    <Rating>Average Rating: {rating.rating || 'N/A'}/10</Rating>
                                 </RatingContainer>
                                 <EpisodeOverview>{overview.overview}</EpisodeOverview>
                                 

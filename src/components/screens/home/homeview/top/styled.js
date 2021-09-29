@@ -77,18 +77,23 @@ export const LeftArrow = styled(IoIosArrowBack)`
     font-size: 30px;
     position: absolute;
     color: white;
-    :hover{
+    @media (hover: hover){
+        :hover{
         font-size: 35px;
     }
+    }
+    
 `
 export const RightArrow = styled(IoIosArrowForward)`
     font-size: 30px;
     position: absolute;
     margin-left: -20px;
     color: white; 
-    
-    :hover{
+    @media (hover: hover){
+       :hover{
         font-size: 35px;
+    }
+     
     }
     
 `

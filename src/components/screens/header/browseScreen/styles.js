@@ -29,10 +29,13 @@ export const Links = styled.a`
     padding-bottom: 20px;
     padding-right: 60px;
     text-decoration: none;
-    :hover{
+    @media (hover: hover){
+        :hover{
         color: gray;
        
+    }  
     }
+  
 
 `
 export const  LinkContainer = styled.div`

@@ -54,11 +54,14 @@ export const FectchedContainer = styled.div`
     margin-right: 19px;
     margin-top: 15px;
     padding: 5px;
-    :hover{
+    @media (hover: hover){
+       :hover{
         transition: ease-in-out 0.3s;
         opacity: 80%;
         background-color: #0d0d0d;
+    }  
     }
+   
     @media screen and (max-width: 575px){
         margin-right: 3px;
         width: 130px;

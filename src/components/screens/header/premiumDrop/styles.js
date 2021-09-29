@@ -15,8 +15,12 @@ export const PremiumDropContainer = styled.div`
     margin-top: 52px;
     right: 50px;
     transition: 0.2s ease-in-out;
-    display: ${({ premium })=> (premium ? 'flex' : 'none')};
-    top: ${({ premium })=> (premium ? '0' : '-100%')};
+    display: none;
+    @media (hover: hover){
+       display: ${({ premium })=> (premium ? 'flex' : 'none')};
+       top: ${({ premium })=> (premium ? '0' : '-100%')}; 
+    }
+    
     @media screen and (max-width: 575px){
         width: 180px;
         height: 400px;

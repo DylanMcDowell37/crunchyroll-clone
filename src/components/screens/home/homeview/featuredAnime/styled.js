@@ -146,7 +146,7 @@ export const AddToList = styled.button`
 export const YouTubeContainer = styled.div`
     position: fixed;
     z-index: 10;
-    width: 100vw;
+    width: 100%;
     background-color: black;
     top: 60px;
     left: 0;

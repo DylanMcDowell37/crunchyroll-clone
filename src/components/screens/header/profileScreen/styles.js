@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const ProfileScreenContainer = styled.div`
     position: fixed;
-    z-index: 2;
+    z-index: 999;
     width: 400px;
     height: calc(100% - 60px);
     background-color: #0d0d0d;

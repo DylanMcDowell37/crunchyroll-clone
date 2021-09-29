@@ -68,6 +68,8 @@ export default function Genres({fetchUrl, title, link}) {
         ref.current.addEventListener('mouseout', mouseOutArrowMedia)
     })
     const opts = {
+        width: '100%',
+        height: '100%',
         playerVars: {
             autoplay: 1,
         }
@@ -77,7 +79,7 @@ export default function Genres({fetchUrl, title, link}) {
         async function fetchAnime(){
             const res = await axios.get(`https://api.simkl.com/${animeUrl}?extended=full`)
             console.log(res.data)
-            setTrailerUrl(res.data.trailers[0].youtube || ' ')
+            setTrailerUrl(res.data.trailers[0].youtube || '')
             setRating(res.data.ratings.mal || ' ')
             setOverview(res.data)
         }
@@ -89,6 +91,10 @@ export default function Genres({fetchUrl, title, link}) {
             setAnimeUrl(anime)
         
         
+    }
+    const handdleExit = () =>{
+        setTrailerUrl('')
+        setAnimeUrl('')
     }
     return (
         <Container>
@@ -114,13 +120,13 @@ export default function Genres({fetchUrl, title, link}) {
                         <RightArrow onClick = {() => scrollL()} mediaArrow = {mediaArrow} />
                     </RightContainer>
                 </RowContainer>
-                {trailerUrl && <YouTubeContainer>
-                        <Exit onClick = {() => setTrailerUrl('')}>X</Exit>
-                        <YouTube videoId = {trailerUrl} opts = {opts} />
+                {animeUrl && <YouTubeContainer>
+                        <Exit onClick = {() => handdleExit()}>X</Exit>
+                        <YouTube videoId = {trailerUrl || 'V_MX0HiIgRQ'} opts = {opts} />
                             <AnimeInfo>
-                                <EpisodeTitle>{overview.title}</EpisodeTitle>
+                                <EpisodeTitle>{overview.title || 'No Title'}</EpisodeTitle>
                                 <EpisodeInfo>
-                                    <EpisodeCount>{overview.total_episodes} Videos</EpisodeCount>
+                                    <EpisodeCount>{overview.total_episodes || "0"} Videos</EpisodeCount>
                                     <Certification>{overview.certification}</Certification>
                                     <Subtitle>Subtitled</Subtitle>
                                 </EpisodeInfo>

@@ -58,11 +58,14 @@ export const Row = styled.div`
     margin-right: 19px;
     margin-top: 15px;
     padding: 5px;
-    :hover{
-        transition: ease-in-out 0.3s;
-        opacity: 80%;
-        background-color: #0d0d0d;
+    @media (hover: hover){
+        :hover{
+            transition: ease-in-out 0.3s;
+            opacity: 80%;
+            background-color: #0d0d0d;
+        }
     }
+       
     @media screen and (max-width: 975px){
         width: 25vw;
         max-width: 230px;
@@ -122,10 +125,15 @@ export const LeftArrow = styled(IoIosArrowBack)`
     font-size: 30px;
     position: absolute;
     color: white;
-    :hover{
-        font-size: 35px;
+    @media (hover: hover){
+         :hover{
+            font-size: 35px;
+        }
     }
+       
     @media screen and (max-width: 575px){
+        display: none;
+        @media (hover: hover){
             display: ${({ mediaArrow })=> (mediaArrow ? 'flex' : 'none')}; 
             font-size: 18px;
             background-color: rgb(102,102,102, 0.7);
@@ -133,6 +141,8 @@ export const LeftArrow = styled(IoIosArrowBack)`
             :hover{
                 font-size: 20px;
             }
+        }
+            
         } 
 `
 export const RightArrow = styled(IoIosArrowForward)`
@@ -141,10 +151,15 @@ export const RightArrow = styled(IoIosArrowForward)`
     margin-left: -10px;
     color: white;
     right: 0;
-    :hover{
+    @media (hover: hover){
+        :hover{
         font-size: 35px;
     }
+    }
+    
     @media screen and (max-width: 575px){
+        display: none;
+        @media (hover: hover){
             display: ${({ mediaArrow })=> (mediaArrow ? 'flex' : 'none')};
             font-size: 18px;
             background-color: rgb(102,102,102, 0.7);
@@ -153,6 +168,8 @@ export const RightArrow = styled(IoIosArrowForward)`
                 font-size: 20px;
             }
         } 
+        }
+        
     
 `
 export const LeftContainer = styled.div`

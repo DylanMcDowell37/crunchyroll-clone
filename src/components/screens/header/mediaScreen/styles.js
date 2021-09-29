@@ -10,6 +10,7 @@ export const MediaNavContainer = styled.div`
     display: grid;
     margin-top: 60px;
     left: 0;
+    overflow-x: hidden;
     overflow-y: scroll;
     scroll-snap-type: smooth;
     ::-webkit-scrollbar{
@@ -49,10 +50,13 @@ export const Links = styled.a`
     width: 100%;
     padding: 18px;
     text-decoration: none;
-    :hover{
+    @media (hover: hover){
+        :hover{
         background-color: rgb(26, 26, 26, 0.6);
        
+    } 
     }
+   
 `
 export const GenresContainer = styled.div`
     display: flex;

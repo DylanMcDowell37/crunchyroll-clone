@@ -8,6 +8,7 @@ import ProfileScreen from './header/profileScreen'
 import Footer from './footer'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import AnimeView from './anime'
+import Manga from './manga'
 
 
 export default function Router() {
@@ -72,6 +73,9 @@ export default function Router() {
                 </Route>
                 <Route path = "/anime">
                     <AnimeView />
+                </Route>
+                <Route path = '/manga'>
+                    <Manga/>
                 </Route>
                 
             </Switch>

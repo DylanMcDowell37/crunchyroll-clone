@@ -5,6 +5,7 @@ export const Container = styled.div`
     flex-direction: column;
     padding-left: 30px;
     z-index: 999;
+    overflow-x: hidden;
     overflow-y: scroll;
     margin-left: -30px;
     ::-webkit-scrollbar{
@@ -29,10 +30,13 @@ export const Links = styled.a`
     text-decoration: none;
     color: white;
     width: 100%;
-    :hover{
+    @media (hover: hover){
+      :hover{
         background-color: rgb(0, 0, 0, 0.2);
        
+    }  
     }
+    
 
 `
 

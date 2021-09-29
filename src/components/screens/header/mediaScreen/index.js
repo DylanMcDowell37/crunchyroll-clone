@@ -21,7 +21,7 @@ export default function MediaLinks({isOpen, toggle, toggleGenres, isOpenGenres})
                 <Break onClick = {toggle}>
                     <hr style = {{opacity: '20%', width: '100%'}}/>
                 </Break>
-                <Links >Manga</Links>
+                <Links href = "/manga" >Manga</Links>
                 <Links >Games</Links>
                 <Links >Store</Links>
                 <Links >News</Links>

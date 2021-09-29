@@ -54,11 +54,14 @@ export const FectchedContainer = styled.div`
     margin-right: 19px;
     margin-top: 15px;
     padding: 5px;
-    :hover{
+    @media (hover: hover){
+       :hover{
         transition: ease-in-out 0.3s;
         opacity: 80%;
         background-color: #0d0d0d;
+    } 
     }
+    
     @media screen and (max-width: 575px){
         margin-right: 1px;
     }
@@ -116,10 +119,12 @@ export const YouTubeContainer = styled.div`
 `
 export const Exit = styled.div`
     position: absolute;
-    left: 10px;
-    top: 10px;
-    
+    left: 0;
+    top: 0;
+    padding: 20px;
     color: white;
+    z-index: 20;
+    background-color: rgb(26, 26, 26, 0.5);
 
 
 `
