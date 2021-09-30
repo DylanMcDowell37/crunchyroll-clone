@@ -41,8 +41,7 @@ export const FetchMangaContainer = styled.div`
     
 `
 export const Poster = styled.img`
-    max-width: 150px;
-    width: 29vw;
+    width: 150px;
     padding-bottom: 5px;
 `
 export const FetchContainer = styled.div`
@@ -162,6 +161,7 @@ export const TextContainer = styled.div`
     display: flex;
     width: 60%;
     justify-content: space-around;
+    padding-top: 25px;
 `
 export const Text = styled.div`
     font-size: 10px;

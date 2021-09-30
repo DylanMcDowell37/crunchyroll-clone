@@ -18,40 +18,54 @@ export default function MangaView({fetchUrl, title}) {
     useEffect(()=>{
         async function fetchData(){
             let newArray = []
-            for(let i = 0; i < 200; i+=20){
+            for(let i = 0; i <= 100; i+=20){
                 const response = await axios.get(`${fetchUrl}${i}`)
                 console.log(response)
                 response.data.data.map((manga) =>{
-                    if(manga.attributes.popularityRank < 1000){
+                    if(manga.attributes.popularityRank < 1800){
                          newArray.push(manga.attributes)
                     }
                    
                 }) 
-                setOriginalList(newArray)      
-        }}
+               
+        }
+                setOriginalList(newArray)
+                setMangaList(newArray)
+    }
+       
+ 
+
        fetchData()
-       setMangaList(originalList)
-       let popular = [...originalList]
-       setPopularityList(popular.sort((a, b) => a.popularityRank - b.popularityRank))
-       let newR = [...originalList]
-       setNewRelease(newR.sort((a, b) => new Date(b.startDate) - new Date(a.startDate)))
-       const getStatus = () =>{
-           let state = [...originalList]
-           let current = []
-           let finished = []
-           for(let i = 0; i < state.length; i++){
-               if(state[i].status === 'current'){
-                    current.push(state[i])
-               }
-               else{
-                   finished.push(state[i])
-               }
-           }
-           setCurrentManga(current)
-           setFinishedManga(finished)
-       }
-       getStatus()
-    }, [fetchUrl]) 
+      
+
+    },[]) 
+
+    useEffect(()=>{
+        let popular = [...originalList]
+        setPopularityList(popular.sort((a, b) => a.popularityRank - b.popularityRank))
+        let newR = [...originalList]
+        setNewRelease(newR.sort((a, b) => new Date(b.startDate) - new Date(a.startDate)))  
+   
+
+        const getStatus = () =>{
+            let state = [...originalList]
+            let current = []
+            let finished = []
+            for(let i = 0; i < state.length; i++){
+                if(state[i].status === 'current'){
+                        current.push(state[i])
+                }
+                else{
+                    finished.push(state[i])
+                }
+            }
+            setCurrentManga(current)
+            setFinishedManga(finished)
+       
+   }
+   getStatus()
+
+    }, [originalList])
 
     // console.log(originalList)
     // console.log(popularityList)
