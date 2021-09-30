@@ -18,6 +18,7 @@ export default function Router() {
     const [profileScreen, setProfileScreen] = useState(false)
     
     
+    
     const toggle = () =>{
       setIsOpen(!isOpen)
       setProfileScreen(false)
@@ -75,7 +76,7 @@ export default function Router() {
                     <AnimeView />
                 </Route>
                 <Route path = '/manga'>
-                    <Manga/>
+                    <Manga />
                 </Route>
                 
             </Switch>

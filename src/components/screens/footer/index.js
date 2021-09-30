@@ -8,8 +8,8 @@ export default function Footer() {
                 <InfoContainer>
                     <LinkContainer>
                         <Title>Navigation</Title>
-                        <Links>Browse Popular</Links>
-                        <Links>Browse Manga</Links>
+                        <Links href = "/anime/">Browse Popular</Links>
+                        <Links href = "/manga">Browse Manga</Links>
                         <Links>News</Links>
                         <Links>Store</Links>
                         <Links>Games</Links>
@@ -17,14 +17,14 @@ export default function Footer() {
                     <Break/>
                     <LinkContainer>
                         <Title>Connect With Me</Title>
-                        <Links>LinkedIn</Links>
-                        <Links>GitHub</Links>
-                        <Links>Portfolio</Links>
+                        <Links href = "https://www.linkedin.com/in/dylan-lee-mcdowell/">LinkedIn</Links>
+                        <Links href = "https://github.com/DylanMcDowell37">GitHub</Links>
+                        <Links href = "https://dylanmcdowell.herokuapp.com/">Portfolio</Links>
                     </LinkContainer>
                     <Break/>
                     <LinkContainer>
                         <Title>Crunchyroll</Title>
-                        <Links>Original Site</Links>
+                        <Links href = "https://beta.crunchyroll.com/">Original Site</Links>
                     </LinkContainer>
                     
                 </InfoContainer>

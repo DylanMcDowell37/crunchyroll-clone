@@ -65,7 +65,7 @@ export default function HeaderHome({toggle, isOpen, browse, toggleBrowse, profil
             </MiddleContainer>
 
             <RightContainer>
-                <PremiumContainer onMouseEnter = {togglePremium} onMouseLeave = {togglePremium}>
+                <PremiumContainer  onMouseEnter = {togglePremium} onMouseLeave = {togglePremium}>
                     
                     <CrownIcon/>
                     <MiniTextContainer>
@@ -73,7 +73,7 @@ export default function HeaderHome({toggle, isOpen, browse, toggleBrowse, profil
                         <MiniText style = {{color: "white"}}>PREMIUM</MiniText>
                     </MiniTextContainer> 
                     <PremiumDrop 
-                        togglePremium = {togglePremium} 
+                         togglePremium = {togglePremium} 
                          premium = {premium}
                     />                        
                 </PremiumContainer>  

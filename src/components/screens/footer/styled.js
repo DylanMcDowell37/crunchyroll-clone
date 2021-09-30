@@ -57,6 +57,7 @@ export const Title = styled.h4`
 export const Links = styled.a`
     color: gray;
     padding-bottom: 15px;
+    text-decoration: none;
 
 `
 export const BottomContainer = styled.div`
