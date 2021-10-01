@@ -10,9 +10,9 @@ export default function Footer() {
                         <Title>Navigation</Title>
                         <Links href = "/anime/">Browse Popular</Links>
                         <Links href = "/manga">Browse Manga</Links>
-                        <Links>News</Links>
-                        <Links>Store</Links>
-                        <Links>Games</Links>
+                        <Links href = "https://www.crunchyroll.com/news">News</Links>
+                        <Links href = "https://store.crunchyroll.com/">Store</Links>
+                        <Links href = "https://www.crunchyroll.com/games/index.html">Games</Links>
                     </LinkContainer>
                     <Break/>
                     <LinkContainer>

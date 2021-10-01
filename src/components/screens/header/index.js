@@ -49,15 +49,15 @@ export default function HeaderHome({toggle, isOpen, browse, toggleBrowse, profil
                         Manga
                     </MangaContainer>
                         
-                    <GamesContainer>
+                    <GamesContainer href = "https://www.crunchyroll.com/games/index.html">
                         Games
                     </GamesContainer>
 
-                    <NewsContainer>
+                    <NewsContainer href = "https://www.crunchyroll.com/news">
                         News
                     </NewsContainer>
 
-                    <StoreContainer>
+                    <StoreContainer href = "https://store.crunchyroll.com/">
                         Store
                     </StoreContainer>
 

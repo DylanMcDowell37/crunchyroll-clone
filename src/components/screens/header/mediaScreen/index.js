@@ -22,9 +22,9 @@ export default function MediaLinks({isOpen, toggle, toggleGenres, isOpenGenres})
                     <hr style = {{opacity: '20%', width: '100%'}}/>
                 </Break>
                 <Links href = "/manga" >Manga</Links>
-                <Links >Games</Links>
-                <Links >Store</Links>
-                <Links >News</Links>
+                <Links href = "https://www.crunchyroll.com/games/index.html">Games</Links>
+                <Links href = "https://store.crunchyroll.com/">Store</Links>
+                <Links href = "https://www.crunchyroll.com/news">News</Links>
         </MediaNavContainer>
         </>
     )
