@@ -282,12 +282,14 @@ export const MangaContainer = styled.a`
     }
    
 `
-export const GamesContainer = styled.div`
+export const GamesContainer = styled.a`
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     width: 75px;
+    text-decoration: none;
+    color: white;
     @media (hover: hover){
        :hover{
         background-color: black;
@@ -295,12 +297,14 @@ export const GamesContainer = styled.div`
     }
    
 `
-export const NewsContainer = styled.div`
+export const NewsContainer = styled.a`
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     width: 75px;
+    text-decoration: none;
+    color: white;
     @media (hover: hover){
     :hover{
         background-color: black;
@@ -308,12 +312,14 @@ export const NewsContainer = styled.div`
     }
 
 `
-export const StoreContainer = styled.div`
+export const StoreContainer = styled.a`
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     width: 75px;
+    text-decoration: none;
+    color: white;
     @media (hover: hover){
        :hover{
         background-color: black;
