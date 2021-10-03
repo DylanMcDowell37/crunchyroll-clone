@@ -17,7 +17,7 @@ export const MediaNavContainer = styled.div`
         display: none;
     }
     transition: 0.1s ease-in-out;
-    opacity: ${({ isOpen })=> (isOpen ? '100%': '0')};
+    display: ${({ isOpen })=> (isOpen ? 'grid': 'none')};
     top: ${({ isOpen })=> (isOpen ? '0' : '-100%')};
     @media screen and (max-width: 575px){
         width: 100%;
